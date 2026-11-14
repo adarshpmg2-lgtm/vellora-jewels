@@ -1,0 +1,40 @@
+<div class="cart-page">
+  <h1 class="section-head"><span class="eyebrow dark">{{ 'cart.title' | t }}</span></h1>
+  {%- if cart.item_count > 0 -%}
+    <form action="{{ routes.cart_url }}" method="post" novalidate>
+      <table class="cart-table">
+        <thead><tr><th colspan="2">{{ 'cart.product' | t }}</th><th>{{ 'cart.quantity' | t }}</th><th>{{ 'cart.total' | t }}</th></tr></thead>
+        <tbody>
+          {%- for item in cart.items -%}
+            <tr>
+              <td>{%- if item.image -%}<a href="{{ item.url }}">{{ item.image | image_url: width: 180 | image_tag: loading: 'lazy', alt: item.product.title }}</a>{%- endif -%}</td>
+              <td>
+                <a href="{{ item.url }}"><strong>{{ item.product.title }}</strong></a>
+                {%- unless item.product.has_only_default_variant -%}<br><span class="muted small">{{ item.variant.title }}</span>{%- endunless -%}
+                {%- for p in item.properties -%}{%- unless p.last == blank or p.first contains '_' -%}<br><span class="muted small">{{ p.first }}: “{{ p.last }}”</span>{%- endunless -%}{%- endfor -%}
+                <br>{{ item.final_price | money }}
+              </td>
+              <td><input type="number" name="updates[]" value="{{ item.quantity }}" min="0" aria-label="{{ 'cart.quantity' | t }}"><br><a class="link-btn" href="{{ item.url_to_remove }}">{{ 'cart.remove' | t }}</a></td>
+              <td>{{ item.final_line_price | money }}</td>
+            </tr>
+          {%- endfor -%}
+        </tbody>
+      </table>
+      <div class="cart-foot">
+        <div class="field textarea-field"><label for="CartNote">{{ 'cart.note' | t }}</label><textarea id="CartNote" name="note" maxlength="200">{{ cart.note }}</textarea></div>
+        <div>
+          <div class="sum-line"><span>{{ 'cart.subtotal' | t }}</span><strong>{{ cart.total_price | money }}</strong></div>
+          <p class="muted small">{{ 'cart.taxes_note' | t }}</p>
+          <button type="submit" name="update" class="btn-outline full">{{ 'cart.update' | t }}</button>
+          <button type="submit" name="checkout" class="btn btn-dark full" style="margin-top:10px">{{ 'cart.checkout' | t }}</button>
+        </div>
+      </div>
+    </form>
+  {%- else -%}
+    <div class="empty-state"><p>{{ 'cart.empty' | t }}</p><a class="btn btn-dark" href="{{ routes.collections_url }}/jewellery">{{ 'cart.discover' | t }}</a></div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{ "name": "Cart" }
+{% endschema %}

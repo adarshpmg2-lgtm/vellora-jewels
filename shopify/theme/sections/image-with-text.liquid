@@ -1,0 +1,36 @@
+<section class="split{% if section.settings.reverse %} rev{% endif %}" id="{{ section.settings.anchor | default: section.id }}">
+  {%- unless section.settings.reverse -%}
+    <div class="split-img">{% render 'image', image: section.settings.image, fallback: section.settings.fallback_image, alt: section.settings.heading, widths: 1400 %}</div>
+  {%- endunless -%}
+  <div class="split-text" data-reveal>
+    <p class="eyebrow dark">{{ section.settings.eyebrow }}</p>
+    <h2>{{ section.settings.heading }}</h2>
+    <div class="rte">{{ section.settings.text }}</div>
+    {%- if section.settings.steps != blank -%}
+      <ol class="steps-list">{%- assign steps = section.settings.steps | newline_to_br | split: '<br />' -%}{%- for s in steps -%}{%- assign s = s | strip -%}{%- if s != blank -%}<li>{{ s }}</li>{%- endif -%}{%- endfor -%}</ol>
+    {%- endif -%}
+    {%- if section.settings.button_label != blank -%}<a href="{{ section.settings.button_url }}" class="btn btn-dark">{{ section.settings.button_label }}</a>{%- endif -%}
+  </div>
+  {%- if section.settings.reverse -%}
+    <div class="split-img">{% render 'image', image: section.settings.image, fallback: section.settings.fallback_image, alt: section.settings.heading, widths: 1400 %}</div>
+  {%- endif -%}
+</section>
+
+{% schema %}
+{
+  "name": "Image with text",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "text", "id": "fallback_image", "label": "Default image file", "default": "model.jpg" },
+    { "type": "checkbox", "id": "reverse", "label": "Image on the right", "default": false },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Icons" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Serena Collection" },
+    { "type": "richtext", "id": "text", "label": "Text", "default": "<p>Inspired by the arches of ancient Rome.</p>" },
+    { "type": "textarea", "id": "steps", "label": "Numbered steps", "info": "One step per line (optional)." },
+    { "type": "text", "id": "button_label", "label": "Button label" },
+    { "type": "url", "id": "button_url", "label": "Button link" },
+    { "type": "text", "id": "anchor", "label": "Anchor id" }
+  ],
+  "presets": [{ "name": "Image with text" }]
+}
+{% endschema %}

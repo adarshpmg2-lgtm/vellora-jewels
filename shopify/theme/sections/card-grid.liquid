@@ -1,0 +1,59 @@
+{%- comment -%} Editorial cards: "duo" (image above text), "overlay" (text on image, like collection cards) or "gift" (mosaic). {%- endcomment -%}
+<section class="section{% if section.settings.cream %} cream{% endif %}" id="{{ section.settings.anchor | default: section.id }}">
+  {%- if section.settings.heading != blank -%}
+    <div class="section-head" data-reveal><p class="eyebrow dark">{{ section.settings.eyebrow }}</p><h2>{{ section.settings.heading }}</h2></div>
+  {%- endif -%}
+  {%- case section.settings.style -%}
+    {%- when 'overlay' -%}
+      <div class="coll-grid" data-reveal>
+        {%- for block in section.blocks -%}
+          <a class="coll-card" href="{{ block.settings.url }}" {{ block.shopify_attributes }}>
+            {% render 'image', image: block.settings.image, fallback: block.settings.fallback_image, alt: block.settings.title, widths: 900 %}
+            <div><h3>{{ block.settings.title }}</h3><p>{{ block.settings.text }}</p><span>{{ 'general.explore' | t }}</span></div>
+          </a>
+        {%- endfor -%}
+      </div>
+    {%- when 'gift' -%}
+      <div class="gift-grid" data-reveal>
+        {%- for block in section.blocks limit: 3 -%}
+          <a href="{{ block.settings.url }}" class="gift-card{% if forloop.first %} big{% endif %}" {{ block.shopify_attributes }}>
+            {% render 'image', image: block.settings.image, fallback: block.settings.fallback_image, alt: block.settings.title, widths: 1400 %}
+            <div class="gift-label"><h3>{{ block.settings.title }}</h3><span>{{ 'general.discover' | t }}</span></div>
+          </a>
+        {%- endfor -%}
+      </div>
+    {%- else -%}
+      <div class="duo{% if section.blocks.size > 2 %} hist-end-links{% endif %}">
+        {%- for block in section.blocks -%}
+          <a class="duo-card" href="{{ block.settings.url }}" {{ block.shopify_attributes }}>
+            {% render 'image', image: block.settings.image, fallback: block.settings.fallback_image, alt: block.settings.title, widths: 1000 %}
+            <div><h3>{{ block.settings.title }}</h3>{%- if block.settings.text != blank -%}<p>{{ block.settings.text }}</p>{%- endif -%}<span>{{ 'general.discover' | t }}</span></div>
+          </a>
+        {%- endfor -%}
+      </div>
+  {%- endcase -%}
+</section>
+
+{% schema %}
+{
+  "name": "Editorial cards",
+  "settings": [
+    { "type": "select", "id": "style", "label": "Style", "default": "duo", "options": [
+      { "value": "duo", "label": "Image above text" }, { "value": "overlay", "label": "Text on image" }, { "value": "gift", "label": "Mosaic (3 cards)" } ] },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
+    { "type": "text", "id": "heading", "label": "Heading" },
+    { "type": "checkbox", "id": "cream", "label": "Cream background", "default": false },
+    { "type": "text", "id": "anchor", "label": "Anchor id" }
+  ],
+  "blocks": [
+    { "type": "card", "name": "Card", "settings": [
+      { "type": "image_picker", "id": "image", "label": "Image" },
+      { "type": "text", "id": "fallback_image", "label": "Default image file" },
+      { "type": "text", "id": "title", "label": "Title", "default": "Title" },
+      { "type": "textarea", "id": "text", "label": "Text" },
+      { "type": "url", "id": "url", "label": "Link" }
+    ] }
+  ],
+  "presets": [{ "name": "Editorial cards", "blocks": [{ "type": "card" }, { "type": "card" }] }]
+}
+{% endschema %}

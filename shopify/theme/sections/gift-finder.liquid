@@ -1,0 +1,22 @@
+<section class="section cream" id="{{ section.settings.anchor | default: 'finder' }}">
+  <div class="section-head" data-reveal><p class="eyebrow dark">{{ section.settings.eyebrow }}</p><h2>{{ section.settings.heading }}</h2></div>
+  <form class="finder" data-gift-finder="{{ section.settings.collection_url | default: '/collections/gifts' }}">
+    <label>{{ 'gifts.for' | t }}<select><option value="">{{ 'gifts.anyone' | t }}</option><option value="her">{{ 'gifts.her' | t }}</option><option value="him">{{ 'gifts.him' | t }}</option><option value="couple">{{ 'gifts.couple' | t }}</option></select></label>
+    <label>{{ 'gifts.occasion' | t }}<select><option value="">{{ 'gifts.any_occasion' | t }}</option><option value="occasion-anniversary">Anniversary</option><option value="occasion-birthday">Birthday</option><option value="occasion-diwali">Diwali</option><option value="occasion-wedding">Wedding</option></select></label>
+    <label>{{ 'gifts.budget' | t }}<select><option value="">{{ 'gifts.any_budget' | t }}</option><option value="under-1l">Under ₹1,00,000</option><option value="under-1-5l">Under ₹1,50,000</option><option value="under-3l">Under ₹3,00,000</option><option value="exceptional">Exceptional</option></select></label>
+    <button class="btn btn-dark" type="submit">{{ 'gifts.show' | t }}</button>
+  </form>
+</section>
+
+{% schema %}
+{
+  "name": "Gift finder",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Gift Finder" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Find the Perfect Gift" },
+    { "type": "text", "id": "collection_url", "label": "Gifts collection path", "default": "/collections/gifts" },
+    { "type": "text", "id": "anchor", "label": "Anchor id", "default": "finder" }
+  ],
+  "presets": [{ "name": "Gift finder" }]
+}
+{% endschema %}

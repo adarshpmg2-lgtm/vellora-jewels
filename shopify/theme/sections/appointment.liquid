@@ -1,0 +1,58 @@
+{%- comment -%} Appointment request sent through Shopify's contact form (arrives in the store's email inbox). {%- endcomment -%}
+<section class="section cream" id="{{ section.settings.anchor | default: 'appointment' }}">
+  <div class="appt-wrap">
+    <div>
+      <p class="eyebrow dark">{{ section.settings.eyebrow }}</p>
+      <h2>{{ section.settings.heading }}</h2>
+      <p class="muted">{{ section.settings.text }}</p>
+    </div>
+    {%- form 'contact', class: 'appt-form', id: 'AppointmentForm' -%}
+      {%- if form.posted_successfully? -%}
+        <p class="appt-done" role="status">{{ 'appointment.success' | t }}</p>
+      {%- else -%}
+        {%- if form.errors -%}<div class="errors">{{ form.errors | default_errors }}</div>{%- endif -%}
+        <input type="hidden" name="contact[Request]" value="{{ section.settings.topic | escape }}">
+        <div class="field-row">
+          <div class="field"><label for="ContactName">{{ 'appointment.name' | t }} *</label><input id="ContactName" name="contact[name]" autocomplete="name" required value="{% if customer %}{{ customer.name }}{% endif %}"></div>
+          <div class="field"><label for="ContactPhone">{{ 'appointment.phone' | t }} *</label><input id="ContactPhone" name="contact[phone]" type="tel" autocomplete="tel" required pattern="[0-9+ ]{10,15}" value="{% if customer %}{{ customer.phone }}{% endif %}"></div>
+        </div>
+        <div class="field"><label for="ContactEmail">{{ 'appointment.email' | t }} *</label><input id="ContactEmail" name="contact[email]" type="email" autocomplete="email" required value="{% if customer %}{{ customer.email }}{% endif %}"></div>
+        <div class="field-row">
+          <div class="field"><label for="ContactBoutique">{{ 'appointment.boutique' | t }}</label>
+            <select id="ContactBoutique" name="contact[Boutique]">
+              <option>{{ 'appointment.video' | t }}</option>
+              {%- assign boutiques = section.settings.boutiques | newline_to_br | split: '<br />' -%}
+              {%- for b in boutiques -%}{%- assign b = b | strip -%}{%- if b != blank -%}<option>{{ b }}</option>{%- endif -%}{%- endfor -%}
+            </select></div>
+          <div class="field"><label for="ContactInterest">{{ 'appointment.interest' | t }}</label>
+            <select id="ContactInterest" name="contact[Interest]">
+              {%- assign topics = 'High Jewellery|Engagement & Bridal|Fine Jewellery|Bespoke Creation|Accessories|Repair & Care' | split: '|' -%}
+              {%- for t in topics -%}<option{% if t == section.settings.topic %} selected{% endif %}>{{ t }}</option>{%- endfor -%}
+            </select></div>
+        </div>
+        <div class="field-row">
+          <div class="field"><label for="ContactDate">{{ 'appointment.date' | t }} *</label><input id="ContactDate" name="contact[Preferred date]" type="date" required min="{{ 'now' | date: '%s' | plus: 86400 | date: '%Y-%m-%d' }}"></div>
+          <div class="field"><label for="ContactTime">{{ 'appointment.time' | t }}</label>
+            <select id="ContactTime" name="contact[Preferred time]">{%- assign times = '11:00|12:30|14:00|15:30|17:00|18:30' | split: '|' -%}{%- for t in times -%}<option>{{ t }}</option>{%- endfor -%}</select></div>
+        </div>
+        <div class="field textarea-field"><label for="ContactBody">{{ 'appointment.message' | t }}</label><textarea id="ContactBody" name="contact[body]" rows="3" maxlength="400"></textarea></div>
+        <button class="btn btn-dark" type="submit">{{ 'appointment.submit' | t }}</button>
+      {%- endif -%}
+    {%- endform -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Appointment form",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "By Appointment" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Request a Private Viewing" },
+    { "type": "textarea", "id": "text", "label": "Text" },
+    { "type": "text", "id": "topic", "label": "Default interest", "default": "High Jewellery" },
+    { "type": "textarea", "id": "boutiques", "label": "Boutiques", "info": "One per line.", "default": "Mumbai — Kala Ghoda\nNew Delhi — DLF Emporio\nBengaluru — UB City\nHyderabad — Banjara Hills" },
+    { "type": "text", "id": "anchor", "label": "Anchor id", "default": "appointment" }
+  ],
+  "presets": [{ "name": "Appointment form" }]
+}
+{% endschema %}

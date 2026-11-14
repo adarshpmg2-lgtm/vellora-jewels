@@ -1,0 +1,43 @@
+<section class="section cream" id="{{ section.settings.anchor | default: 'boutiques' }}">
+  <div class="section-head" data-reveal><p class="eyebrow dark">{{ section.settings.eyebrow }}</p><h2>{{ section.settings.heading }}</h2></div>
+  <div class="city-filter" data-city-filter>
+    <button class="filter active" type="button" data-city="all">{{ 'collections.all' | t }}</button>
+    {%- capture country_list -%}{%- for block in section.blocks -%}{{ block.settings.country }}|{%- endfor -%}{%- endcapture -%}
+    {%- assign countries = country_list | split: '|' | uniq -%}
+    {%- for c in countries -%}<button class="filter" type="button" data-city="{{ c | escape }}">{{ c }}</button>{%- endfor -%}
+  </div>
+  <div class="boutique-grid">
+    {%- for block in section.blocks -%}
+      <div class="boutique" data-country="{{ block.settings.country | escape }}" {{ block.shopify_attributes }}>
+        <h4>{{ block.settings.city }}</h4><p class="b-name">{{ block.settings.name }}</p>
+        <p>{{ block.settings.address }}</p><p>{{ block.settings.hours }}</p>
+        <p><a href="tel:{{ block.settings.phone | remove: ' ' }}">{{ block.settings.phone }}</a></p>
+        {%- if block.settings.map_url != blank -%}<p><a class="link-btn" href="{{ block.settings.map_url }}" target="_blank" rel="noopener">{{ 'maison.directions' | t }}</a></p>{%- endif -%}
+        <button class="link-btn" type="button" data-book="{{ block.settings.city | escape }}">{{ 'maison.book_here' | t }}</button>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Boutiques",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Visit Us" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Find a Boutique" },
+    { "type": "text", "id": "anchor", "label": "Anchor id", "default": "boutiques" }
+  ],
+  "blocks": [
+    { "type": "boutique", "name": "Boutique", "settings": [
+      { "type": "text", "id": "city", "label": "City", "default": "Mumbai" },
+      { "type": "text", "id": "country", "label": "Country (for the filter)", "default": "India" },
+      { "type": "text", "id": "name", "label": "Name", "default": "Kala Ghoda" },
+      { "type": "textarea", "id": "address", "label": "Address" },
+      { "type": "text", "id": "hours", "label": "Opening hours" },
+      { "type": "text", "id": "phone", "label": "Phone" },
+      { "type": "url", "id": "map_url", "label": "Map link" }
+    ] }
+  ],
+  "presets": [{ "name": "Boutiques", "blocks": [{ "type": "boutique" }] }]
+}
+{% endschema %}

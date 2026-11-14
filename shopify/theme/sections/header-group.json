@@ -1,0 +1,16 @@
+{
+  "type": "header",
+  "name": "Header group",
+  "sections": {
+    "header": {
+      "type": "header",
+      "settings": {
+        "menu": "main-menu",
+        "promo_1": "Complimentary express shipping across India",
+        "promo_2": "Book a private appointment at our boutiques",
+        "promo_3": "Complimentary engraving on rings & bracelets"
+      }
+    }
+  },
+  "order": ["header"]
+}

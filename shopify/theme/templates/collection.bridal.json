@@ -1,0 +1,171 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "blocks": {
+        "sub_41": {
+          "type": "sub",
+          "settings": {
+            "label": "Engagement Rings",
+            "tag": "engagement",
+            "fallback_image": "ring-solitaire.jpg"
+          }
+        },
+        "sub_42": {
+          "type": "sub",
+          "settings": {
+            "label": "Wedding Bands",
+            "tag": "bands",
+            "fallback_image": "wedding-bands.jpg"
+          }
+        },
+        "sub_43": {
+          "type": "sub",
+          "settings": {
+            "label": "Eternity Rings",
+            "tag": "eternity",
+            "fallback_image": "ring-stack.jpg"
+          }
+        },
+        "sub_44": {
+          "type": "sub",
+          "settings": {
+            "label": "Bridal Jewellery",
+            "tag": "bridal-jewellery",
+            "fallback_image": "pendant-cushion.jpg"
+          }
+        },
+        "sub_45": {
+          "type": "sub",
+          "settings": {
+            "label": "For Him",
+            "tag": "mens",
+            "fallback_image": "wedding-bands.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "sub_41",
+        "sub_42",
+        "sub_43",
+        "sub_44",
+        "sub_45"
+      ],
+      "settings": {
+        "fallback_image": "wedding-bands.jpg",
+        "eyebrow": "Love & Promise",
+        "heading": "All Bridal",
+        "show_tiles": true,
+        "per_page": 24,
+        "dark": false,
+        "button_label": "Book a Bridal Appointment",
+        "button_url": "#appointment"
+      }
+    },
+    "guide": {
+      "type": "diamond-guide",
+      "blocks": {
+        "tab_46": {
+          "type": "tab",
+          "settings": {
+            "title": "Cut",
+            "text": "Cut decides how brilliantly a diamond returns light. We only set diamonds graded Excellent or Very Good, cut for maximum fire."
+          }
+        },
+        "tab_47": {
+          "type": "tab",
+          "settings": {
+            "title": "Colour",
+            "text": "Graded from D (colourless) to Z. Our engagement diamonds are D to G — icy white and timeless in any metal."
+          }
+        },
+        "tab_48": {
+          "type": "tab",
+          "settings": {
+            "title": "Clarity",
+            "text": "Measures natural inclusions. Every centre stone is VS2 or better, so nothing is visible to the eye."
+          }
+        },
+        "tab_49": {
+          "type": "tab",
+          "settings": {
+            "title": "Carat",
+            "text": "The weight of the diamond: 1 carat = 0.2 g. Our solitaires range from 0.30ct to over 5ct, all certified by GIA or IGI."
+          }
+        }
+      },
+      "block_order": [
+        "tab_46",
+        "tab_47",
+        "tab_48",
+        "tab_49"
+      ],
+      "settings": {
+        "eyebrow": "Diamond Guide",
+        "heading": "The 4Cs",
+        "shapes_url": "/collections/bridal/engagement",
+        "anchor": "guide"
+      }
+    },
+    "services": {
+      "type": "info-grid",
+      "blocks": {
+        "item_50": {
+          "type": "item",
+          "settings": {
+            "title": "Complimentary engraving",
+            "text": "<p>Initials, a date or a short message engraved inside the band by hand.</p>"
+          }
+        },
+        "item_51": {
+          "type": "item",
+          "settings": {
+            "title": "Free resizing",
+            "text": "<p>Your first resize is on us, in boutique or by insured courier.</p>"
+          }
+        },
+        "item_52": {
+          "type": "item",
+          "settings": {
+            "title": "Lifetime cleaning",
+            "text": "<p>Bring your rings back any time for a professional clean and stone check.</p>"
+          }
+        },
+        "item_53": {
+          "type": "item",
+          "settings": {
+            "title": "Certified diamonds",
+            "text": "<p>Every centre diamond over 0.30ct comes with a GIA or IGI certificate.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_50",
+        "item_51",
+        "item_52",
+        "item_53"
+      ],
+      "settings": {
+        "eyebrow": "For Life",
+        "heading": "Bridal Services",
+        "anchor": "services"
+      }
+    },
+    "appointment": {
+      "type": "appointment",
+      "settings": {
+        "eyebrow": "Together",
+        "heading": "Book a Bridal Appointment",
+        "text": "Discover engagement rings and wedding bands with a bridal specialist, in boutique or over video.",
+        "topic": "Engagement & Bridal",
+        "anchor": "appointment"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "guide",
+    "services",
+    "appointment"
+  ]
+}

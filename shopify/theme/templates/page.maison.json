@@ -1,0 +1,312 @@
+{
+  "sections": {
+    "main": {
+      "type": "maison-page",
+      "blocks": {
+        "year_70": {
+          "type": "year",
+          "settings": {
+            "year": "1924",
+            "title": "Founded in Rome",
+            "text": "Goldsmith Marco Vellora opens a workshop near the Spanish Steps."
+          }
+        },
+        "year_71": {
+          "type": "year",
+          "settings": {
+            "year": "1938",
+            "title": "Via Condotti",
+            "text": "The first boutique opens on Rome's most elegant street."
+          }
+        },
+        "year_72": {
+          "type": "year",
+          "settings": {
+            "year": "1955",
+            "title": "Colour arrives",
+            "text": "Cabochon gemstones in bold combinations become the Maison's signature."
+          }
+        },
+        "year_73": {
+          "type": "year",
+          "settings": {
+            "year": "1972",
+            "title": "Serena is born",
+            "text": "The arch-inspired collection becomes an instant icon."
+          }
+        },
+        "year_74": {
+          "type": "year",
+          "settings": {
+            "year": "1998",
+            "title": "Florentine leather",
+            "text": "A leather workshop in Florence launches the first VELLORA bags."
+          }
+        },
+        "year_75": {
+          "type": "year",
+          "settings": {
+            "year": "2012",
+            "title": "VELLORA in India",
+            "text": "The first Indian boutique opens in Mumbai's Kala Ghoda."
+          }
+        },
+        "year_76": {
+          "type": "year",
+          "settings": {
+            "year": "2024",
+            "title": "A century",
+            "text": "One hundred years celebrated with the Aurea Eterna collection."
+          }
+        }
+      },
+      "block_order": [
+        "year_70",
+        "year_71",
+        "year_72",
+        "year_73",
+        "year_74",
+        "year_75",
+        "year_76"
+      ],
+      "settings": {
+        "history_url": "/pages/history"
+      }
+    },
+    "icons": {
+      "type": "product-row",
+      "settings": {
+        "eyebrow": "Timeless",
+        "heading": "Icons of the Maison",
+        "products": [
+          "stella-tennis-bracelet",
+          "aurea-solitaire-ring",
+          "serena-hoop-earrings",
+          "luna-layered-necklace"
+        ],
+        "anchor": "icons"
+      }
+    },
+    "ateliers": {
+      "type": "image-with-text",
+      "settings": {
+        "fallback_image": "model-ring.jpg",
+        "eyebrow": "Craftsmanship",
+        "heading": "From Sketch to Jewel",
+        "text": "<p>More than 300 artisans work in our Roman ateliers. A single high jewellery necklace passes through the hands of designers, wax modellers, goldsmiths, setters and polishers.</p>",
+        "steps": "Design — gouache drawings at life size\nModelling — carved in wax or metal\nGoldsmithing — cast, assembled and soldered\nSetting — every stone placed by hand\nPolishing — until the gold glows",
+        "anchor": "ateliers"
+      }
+    },
+    "sustainability": {
+      "type": "info-grid",
+      "blocks": {
+        "f1": {
+          "type": "figure",
+          "settings": {
+            "number": 100,
+            "suffix": "%",
+            "label": "Recycled or certified gold"
+          }
+        },
+        "f2": {
+          "type": "figure",
+          "settings": {
+            "number": 100,
+            "suffix": "%",
+            "label": "Diamonds Kimberley Process compliant"
+          }
+        },
+        "f3": {
+          "type": "figure",
+          "settings": {
+            "number": 40,
+            "suffix": "%",
+            "label": "Less energy in our ateliers since 2018"
+          }
+        },
+        "i1": {
+          "type": "item",
+          "settings": {
+            "title": "Traceable gemstones",
+            "text": "<p>We buy from mines and cutters audited to the Responsible Jewellery Council standard.</p>"
+          }
+        },
+        "i2": {
+          "type": "item",
+          "settings": {
+            "title": "Recycled gold",
+            "text": "<p>All our gold is recycled or comes from certified responsible sources.</p>"
+          }
+        },
+        "i3": {
+          "type": "item",
+          "settings": {
+            "title": "Artisan schools",
+            "text": "<p>The VELLORA Foundation trains 60 young goldsmiths every year in Rome and Jaipur.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "f1",
+        "f2",
+        "f3",
+        "i1",
+        "i2",
+        "i3"
+      ],
+      "settings": {
+        "eyebrow": "Commitments",
+        "heading": "Responsible Luxury",
+        "anchor": "sustainability"
+      }
+    },
+    "boutiques": {
+      "type": "boutiques",
+      "blocks": {
+        "boutique_77": {
+          "type": "boutique",
+          "settings": {
+            "city": "Mumbai",
+            "country": "India",
+            "name": "Kala Ghoda",
+            "address": "14 Rampart Row, Kala Ghoda, Mumbai 400001",
+            "hours": "Open daily 11:00 – 20:00",
+            "phone": "+91 22 4000 1924"
+          }
+        },
+        "boutique_78": {
+          "type": "boutique",
+          "settings": {
+            "city": "New Delhi",
+            "country": "India",
+            "name": "DLF Emporio",
+            "address": "Ground Floor, DLF Emporio, Vasant Kunj, New Delhi 110070",
+            "hours": "Open daily 11:00 – 21:00",
+            "phone": "+91 11 4000 1924"
+          }
+        },
+        "boutique_79": {
+          "type": "boutique",
+          "settings": {
+            "city": "Bengaluru",
+            "country": "India",
+            "name": "UB City",
+            "address": "Level 1, UB City, Vittal Mallya Road, Bengaluru 560001",
+            "hours": "Open daily 11:00 – 21:00",
+            "phone": "+91 80 4000 1924"
+          }
+        },
+        "boutique_80": {
+          "type": "boutique",
+          "settings": {
+            "city": "Hyderabad",
+            "country": "India",
+            "name": "Banjara Hills",
+            "address": "Road No. 1, Banjara Hills, Hyderabad 500034",
+            "hours": "Open daily 11:00 – 20:30",
+            "phone": "+91 40 4000 1924"
+          }
+        },
+        "boutique_81": {
+          "type": "boutique",
+          "settings": {
+            "city": "Rome",
+            "country": "Italy",
+            "name": "Via Condotti",
+            "address": "Via Condotti 10, 00187 Roma, Italy",
+            "hours": "Open daily 10:00 – 19:30",
+            "phone": "+39 06 000 1924"
+          }
+        },
+        "boutique_82": {
+          "type": "boutique",
+          "settings": {
+            "city": "Milan",
+            "country": "Italy",
+            "name": "Via Montenapoleone",
+            "address": "Via Montenapoleone 2, 20121 Milano, Italy",
+            "hours": "Open daily 10:00 – 19:30",
+            "phone": "+39 02 000 1924"
+          }
+        }
+      },
+      "block_order": [
+        "boutique_77",
+        "boutique_78",
+        "boutique_79",
+        "boutique_80",
+        "boutique_81",
+        "boutique_82"
+      ],
+      "settings": {
+        "anchor": "boutiques"
+      }
+    },
+    "appointment": {
+      "type": "appointment",
+      "settings": {
+        "eyebrow": "Visit Us",
+        "heading": "Book an Appointment",
+        "text": "Meet a client advisor in boutique or over a private video call.",
+        "topic": "Fine Jewellery",
+        "anchor": "appointment",
+        "boutiques": "Mumbai — Kala Ghoda\nNew Delhi — DLF Emporio\nBengaluru — UB City\nHyderabad — Banjara Hills\nRome — Via Condotti\nMilan — Via Montenapoleone"
+      }
+    },
+    "careers": {
+      "type": "info-grid",
+      "blocks": {
+        "item_83": {
+          "type": "item",
+          "settings": {
+            "title": "Client Advisor",
+            "text": "<p>Mumbai · New Delhi · Bengaluru</p>"
+          }
+        },
+        "item_84": {
+          "type": "item",
+          "settings": {
+            "title": "Apprentice Goldsmith",
+            "text": "<p>Rome atelier · 2-year programme</p>"
+          }
+        },
+        "item_85": {
+          "type": "item",
+          "settings": {
+            "title": "Visual Merchandiser",
+            "text": "<p>Mumbai · Full time</p>"
+          }
+        },
+        "item_86": {
+          "type": "item",
+          "settings": {
+            "title": "E-commerce Specialist",
+            "text": "<p>Remote, India · Full time</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_83",
+        "item_84",
+        "item_85",
+        "item_86"
+      ],
+      "settings": {
+        "eyebrow": "Join Us",
+        "heading": "Careers",
+        "note": "Send your CV to careers@vellora.example",
+        "anchor": "careers"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "icons",
+    "ateliers",
+    "sustainability",
+    "boutiques",
+    "appointment",
+    "careers"
+  ]
+}

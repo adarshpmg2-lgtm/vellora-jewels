@@ -1,0 +1,83 @@
+{%- if section.settings.show_services -%}
+  <section class="services">
+    <div class="service">{% render 'icon', name: 'truck' %}<h4>{{ 'footer.shipping' | t }}</h4><p>{{ 'footer.shipping_text' | t }}</p></div>
+    <div class="service">{% render 'icon', name: 'calendar' %}<h4>{{ 'footer.appointment' | t }}</h4><p>{{ 'footer.appointment_text' | t }}</p></div>
+    <div class="service">{% render 'icon', name: 'pen' %}<h4>{{ 'footer.engraving' | t }}</h4><p>{{ 'footer.engraving_text' | t }}</p></div>
+    <div class="service">{% render 'icon', name: 'gift' %}<h4>{{ 'footer.packaging' | t }}</h4><p>{{ 'footer.packaging_text' | t }}</p></div>
+  </section>
+{%- endif -%}
+
+<section class="newsletter" id="contact">
+  <h2>{{ section.settings.newsletter_heading }}</h2>
+  <p>{{ section.settings.newsletter_text }}</p>
+  {%- form 'customer', class: 'news-form', id: 'newsletterForm' -%}
+    {%- if form.posted_successfully? -%}
+      <p class="form-msg">{{ 'footer.subscribed' | t }}</p>
+    {%- else -%}
+      <input type="hidden" name="contact[tags]" value="newsletter">
+      <input type="email" name="contact[email]" placeholder="{{ 'footer.email' | t }}" required aria-label="{{ 'footer.email' | t }}" autocomplete="email">
+      <button type="submit" class="btn btn-dark">{{ 'footer.subscribe' | t }}</button>
+    {%- endif -%}
+  {%- endform -%}
+  {%- if section.settings.phone != blank -%}
+    <p class="contact-line">{{ 'footer.client_services' | t }}: <a href="tel:{{ section.settings.phone | remove: ' ' }}">{{ section.settings.phone }}</a></p>
+  {%- endif -%}
+</section>
+
+<footer class="footer">
+  <div class="footer-grid">
+    {%- for block in section.blocks -%}
+      <div {{ block.shopify_attributes }}>
+        <h5>{{ block.settings.heading }}</h5>
+        {%- for link in linklists[block.settings.menu].links -%}<a href="{{ link.url }}">{{ link.title }}</a>{%- endfor -%}
+      </div>
+    {%- else -%}
+      <div><h5>{{ 'footer.client_services' | t }}</h5>
+        <a href="#contact">{{ 'header.contact' | t }}</a><a href="{{ routes.collections_url }}/high-jewellery#appointment">{{ 'footer.appointment' | t }}</a>
+        <a href="{{ routes.collections_url }}/bridal#size-guide">{{ 'footer.size_guide' | t }}</a><a href="{{ routes.collections_url }}/jewellery#care">{{ 'footer.care' | t }}</a>
+        <a href="/policies/refund-policy">{{ 'footer.returns' | t }}</a></div>
+      <div><h5>The Maison</h5>
+        <a href="/pages/history">{{ 'footer.history' | t }}</a><a href="/pages/maison#ateliers">{{ 'footer.ateliers' | t }}</a>
+        <a href="/pages/maison#sustainability">{{ 'footer.sustainability' | t }}</a><a href="/pages/maison#boutiques">{{ 'header.boutiques' | t }}</a></div>
+      <div><h5>{{ 'footer.shop' | t }}</h5>
+        <a href="{{ routes.collections_url }}/high-jewellery">High Jewellery</a><a href="{{ routes.collections_url }}/jewellery">Jewellery</a><a href="{{ routes.collections_url }}/bridal">Bridal</a>
+        <a href="{{ routes.collections_url }}/accessories">Accessories</a><a href="{{ routes.collections_url }}/gifts">Gifts</a></div>
+    {%- endfor -%}
+    <div><h5>{{ 'footer.follow' | t }}</h5>
+      <div class="socials">
+        {%- if settings.social_instagram != blank -%}<a href="{{ settings.social_instagram }}" aria-label="Instagram">{% render 'icon', name: 'instagram' %}</a>{%- endif -%}
+        {%- if settings.social_facebook != blank -%}<a href="{{ settings.social_facebook }}" aria-label="Facebook">{% render 'icon', name: 'facebook' %}</a>{%- endif -%}
+        {%- if settings.social_youtube != blank -%}<a href="{{ settings.social_youtube }}" aria-label="YouTube">{% render 'icon', name: 'youtube' %}</a>{%- endif -%}
+      </div>
+      <p class="region">{{ 'footer.region' | t }}: <strong>{{ localization.country.name }} ({{ cart.currency.iso_code }})</strong></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="logo small">{{ section.settings.copyright | default: shop.name }}</span>
+    <p>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. {{ powered_by_link }}</p>
+    {%- if shop.enabled_payment_types.size > 0 -%}
+      <ul class="payment-icons">{%- for type in shop.enabled_payment_types -%}<li>{{ type | payment_type_svg_tag }}</li>{%- endfor -%}</ul>
+    {%- endif -%}
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "class": "footer-section",
+  "max_blocks": 3,
+  "settings": [
+    { "type": "checkbox", "id": "show_services", "label": "Show services strip", "default": true },
+    { "type": "text", "id": "newsletter_heading", "label": "Newsletter heading", "default": "Stay in Touch" },
+    { "type": "textarea", "id": "newsletter_text", "label": "Newsletter text" },
+    { "type": "text", "id": "phone", "label": "Client services phone" },
+    { "type": "text", "id": "copyright", "label": "Footer wordmark" }
+  ],
+  "blocks": [
+    { "type": "menu", "name": "Link column", "settings": [
+      { "type": "text", "id": "heading", "label": "Heading", "default": "Links" },
+      { "type": "link_list", "id": "menu", "label": "Menu", "default": "footer" }
+    ] }
+  ]
+}
+{% endschema %}

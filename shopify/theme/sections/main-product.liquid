@@ -1,0 +1,115 @@
+{%- liquid
+  assign current = product.selected_or_first_available_variant
+  assign needs_size = false
+  assign needs_size_msg = ''
+  if product.has_only_default_variant == false and product.variants.size > 1
+    assign needs_size = true
+    assign needs_size_msg = 'products.choose_size' | t
+  endif
+  assign crumb = collection | default: product.collections.first
+  assign is_high = false
+  if product.tags contains 'sec-high'
+    assign is_high = true
+  endif
+-%}
+<div class="product-page">
+  <nav class="crumbs" aria-label="{{ 'general.breadcrumb' | t }}">
+    <a href="{{ routes.root_url }}">{{ 'general.home' | t }}</a>
+    {%- if crumb %} / <a href="{{ crumb.url }}">{{ crumb.title }}</a>{% endif %} / <span>{{ product.title }}</span>
+  </nav>
+  <div class="pd page">
+    <div class="pd-gallery">
+      <div class="pd-img" data-zoom>
+        {%- if product.featured_media -%}
+          {{ product.featured_media | image_url: width: 1400 | image_tag: alt: product.featured_media.alt, loading: 'eager', widths: '600, 900, 1200, 1400', sizes: '(min-width: 860px) 55vw, 100vw' }}
+        {%- else -%}{{ 'product-1' | placeholder_svg_tag }}{%- endif -%}
+      </div>
+      {%- if product.media.size > 1 -%}
+        <div class="pd-thumbs">
+          {%- for media in product.media -%}
+            <button type="button" class="{% if forloop.first %}active{% endif %}" data-thumb="{{ media | image_url: width: 1400 }}" aria-label="{{ media.alt | escape }}">{{ media | image_url: width: 150 | image_tag: loading: 'lazy' }}</button>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="pd-info">
+      <p class="eyebrow dark">{{ product.vendor }}</p>
+      <h1 class="pd-title">{{ product.title }}</h1>
+      <p class="pd-price"><span data-price>{{ current.price | money }}</span>{% if current.compare_at_price > current.price %} <s>{{ current.compare_at_price | money }}</s>{% endif %}</p>
+      <p class="muted small">{{ 'products.tax_note' | t }}</p>
+      <div class="pd-long rte">{{ product.description }}</div>
+
+      {%- form 'product', product, data-ajax-cart: '', data-product-form: '', data-needs-size: needs_size_msg -%}
+        <script type="application/json" data-variants>{{ product.variants | json }}</script>
+        {%- if needs_size -%}
+          <input type="hidden" name="id" value="{% if product.selected_variant %}{{ product.selected_variant.id }}{% endif %}">
+          {%- for option in product.options_with_values limit: 1 -%}
+            <fieldset class="sizes"><legend>{{ 'products.select' | t }} {{ option.name | downcase }} <a class="link-btn" href="{{ routes.collections_url }}/bridal#size-guide">{{ 'products.size_guide' | t }}</a></legend>
+              {%- for value in option.values -%}
+                {%- assign v = product.variants | where: 'option1', value | first -%}
+                <label><input type="radio" name="option-{{ option.position }}" value="{{ value | escape }}" data-option{% if product.selected_variant.option1 == value %} checked{% endif %}{% unless v.available %} disabled{% endunless %}><span>{{ value }}</span></label>
+              {%- endfor -%}
+            </fieldset>
+          {%- endfor -%}
+        {%- else -%}
+          <input type="hidden" name="id" value="{{ current.id }}">
+        {%- endif -%}
+        <p class="field-error" data-error></p>
+
+        {%- if product.tags contains 'engravable' -%}
+          <label class="check-line"><input type="checkbox" data-engrave-toggle> {{ 'products.engraving_offer' | t }}</label>
+          <div class="field" data-engrave-field hidden>
+            <input type="text" name="properties[Engraving]" maxlength="15" placeholder="{{ 'products.engraving_placeholder' | t }}" aria-label="{{ 'products.engraving' | t }}" disabled>
+            <small data-engrave-count>0 / 15</small>
+          </div>
+        {%- endif -%}
+
+        <div class="pd-buy">
+          <div class="qty big">
+            <button type="button" data-step="-1" aria-label="−">−</button><span data-qty-label>1</span><button type="button" data-step="1" aria-label="+">+</button>
+            <input type="hidden" name="quantity" value="1">
+          </div>
+          <button class="btn btn-dark" type="submit" data-add="{{ 'products.add_to_cart' | t }}" data-soldout="{{ 'products.sold_out' | t }}"{% unless current.available %} disabled{% endunless %}>
+            {%- if current.available -%}{{ 'products.add_to_cart' | t }}{%- else -%}{{ 'products.sold_out' | t }}{%- endif -%}
+          </button>
+        </div>
+      {%- endform -%}
+
+      {%- if is_high -%}<a class="btn-outline full" href="{{ routes.collections_url }}/high-jewellery#appointment">{{ 'products.private_viewing' | t }}</a>{%- endif -%}
+
+      {%- for block in section.blocks -%}
+        <details class="pd-acc"{% if forloop.first %} open{% endif %} {{ block.shopify_attributes }}><summary>{{ block.settings.title }}</summary><div class="rte">{{ block.settings.content }}</div></details>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org", "@type": "Product",
+  "name": {{ product.title | json }},
+  "description": {{ product.description | strip_html | json }},
+  "sku": {{ current.sku | json }},
+  "brand": { "@type": "Brand", "name": {{ product.vendor | json }} },
+  {%- if product.featured_media -%}"image": [{{ product.featured_media | image_url: width: 1200 | prepend: 'https:' | json }}],{%- endif -%}
+  "offers": [{%- for variant in product.variants -%}{
+    "@type": "Offer", "sku": {{ variant.sku | json }},
+    "availability": "https://schema.org/{% if variant.available %}InStock{% else %}OutOfStock{% endif %}",
+    "price": {{ variant.price | divided_by: 100.00 | json }}, "priceCurrency": {{ cart.currency.iso_code | json }},
+    "url": "{{ request.origin }}{{ variant.url }}"
+  }{% unless forloop.last %},{% endunless %}{%- endfor -%}]
+}
+</script>
+
+{% schema %}
+{
+  "name": "Product information",
+  "blocks": [
+    { "type": "collapsible", "name": "Collapsible text", "settings": [
+      { "type": "text", "id": "title", "label": "Title", "default": "Complimentary services" },
+      { "type": "richtext", "id": "content", "label": "Content", "default": "<p>Free insured express delivery in 2–4 days, signature packaging and returns within 30 days.</p>" }
+    ] }
+  ]
+}
+{% endschema %}

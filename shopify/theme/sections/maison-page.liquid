@@ -1,0 +1,41 @@
+{%- comment -%} Maison page top: banner, in-page tabs and the heritage timeline (each year links to its History chapter). {%- endcomment -%}
+<section class="page-hero">
+  {% render 'image', image: section.settings.image, fallback: 'colosseum.jpg', alt: page.title, loading: 'eager' %}
+  <div class="page-hero-text">
+    <nav class="crumbs light" aria-label="{{ 'general.breadcrumb' | t }}"><a href="{{ routes.root_url }}">{{ 'general.home' | t }}</a> / <span>{{ page.title }}</span></nav>
+    <p class="eyebrow">{{ section.settings.eyebrow }}</p><h1>{{ page.title }}</h1><p>{{ section.settings.text }}</p>
+  </div>
+</section>
+<nav class="page-tabs" aria-label="{{ 'general.on_this_page' | t }}">
+  <a href="#heritage">Heritage</a><a href="#icons">Icons</a><a href="#ateliers">Ateliers</a><a href="#sustainability">Sustainability</a><a href="#boutiques">Boutiques</a><a href="#careers">Careers</a>
+</nav>
+<section class="section" id="heritage">
+  <div class="section-head" data-reveal><p class="eyebrow dark">{{ 'maison.story' | t }}</p><h2>{{ section.settings.timeline_heading }}</h2></div>
+  <ol class="h-timeline" data-reveal>
+    {%- for block in section.blocks -%}
+      <li {{ block.shopify_attributes }}><a href="{{ section.settings.history_url }}#y{{ block.settings.year }}"><span class="year">{{ block.settings.year }}</span><h4>{{ block.settings.title }}</h4><p>{{ block.settings.text }}</p></a></li>
+    {%- endfor -%}
+  </ol>
+  <p class="center"><a class="btn btn-dark" href="{{ section.settings.history_url }}">{{ 'maison.read_history' | t }}</a></p>
+</section>
+{%- if page.content != blank -%}<section class="page-narrow rte">{{ page.content }}</section>{%- endif -%}
+
+{% schema %}
+{
+  "name": "Maison intro & timeline",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Banner image" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Since 1924" },
+    { "type": "text", "id": "text", "label": "Banner text", "default": "A century of Roman audacity — colour, volume and gold, set by hand." },
+    { "type": "text", "id": "timeline_heading", "label": "Timeline heading", "default": "A Century of Roman Splendour" },
+    { "type": "url", "id": "history_url", "label": "History page", "default": "/pages/history" }
+  ],
+  "blocks": [
+    { "type": "year", "name": "Milestone", "settings": [
+      { "type": "text", "id": "year", "label": "Year", "default": "1924" },
+      { "type": "text", "id": "title", "label": "Title", "default": "Founded in Rome" },
+      { "type": "textarea", "id": "text", "label": "Text" }
+    ] }
+  ]
+}
+{% endschema %}

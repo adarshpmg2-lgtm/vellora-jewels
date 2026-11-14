@@ -1,0 +1,142 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "blocks": {
+        "sub_59": {
+          "type": "sub",
+          "settings": {
+            "label": "For Her",
+            "tag": "her",
+            "fallback_image": "ring-solitaire.jpg"
+          }
+        },
+        "sub_60": {
+          "type": "sub",
+          "settings": {
+            "label": "For Him",
+            "tag": "him",
+            "fallback_image": "wedding-bands.jpg"
+          }
+        },
+        "sub_61": {
+          "type": "sub",
+          "settings": {
+            "label": "For Couples",
+            "tag": "couple",
+            "fallback_image": "wedding-bands.jpg"
+          }
+        },
+        "sub_62": {
+          "type": "sub",
+          "settings": {
+            "label": "Under ₹1,00,000",
+            "tag": "under-1l",
+            "fallback_image": "rings-dish.jpg"
+          }
+        },
+        "sub_63": {
+          "type": "sub",
+          "settings": {
+            "label": "Under ₹1,50,000",
+            "tag": "under-1-5l",
+            "fallback_image": "rings-dish.jpg"
+          }
+        },
+        "sub_64": {
+          "type": "sub",
+          "settings": {
+            "label": "Under ₹3,00,000",
+            "tag": "under-3l",
+            "fallback_image": "ring-stack.jpg"
+          }
+        },
+        "sub_65": {
+          "type": "sub",
+          "settings": {
+            "label": "Exceptional Gifts",
+            "tag": "exceptional",
+            "fallback_image": "ring-solitaire.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "sub_59",
+        "sub_60",
+        "sub_61",
+        "sub_62",
+        "sub_63",
+        "sub_64",
+        "sub_65"
+      ],
+      "settings": {
+        "fallback_image": "gift.jpg",
+        "eyebrow": "The Art of Gifting",
+        "heading": "All Gifts",
+        "show_tiles": false,
+        "per_page": 24,
+        "dark": false,
+        "button_label": "Open the Gift Finder",
+        "button_url": "#finder"
+      }
+    },
+    "finder": {
+      "type": "gift-finder",
+      "settings": {
+        "eyebrow": "Gift Finder",
+        "heading": "Find the Perfect Gift",
+        "collection_url": "/collections/gifts",
+        "anchor": "finder"
+      }
+    },
+    "services": {
+      "type": "info-grid",
+      "blocks": {
+        "item_66": {
+          "type": "item",
+          "settings": {
+            "title": "Signature packaging",
+            "text": "<p>Every gift arrives in our lacquered box with a silk ribbon, at no extra cost.</p>"
+          }
+        },
+        "item_67": {
+          "type": "item",
+          "settings": {
+            "title": "Handwritten message",
+            "text": "<p>Add a personal note at checkout and our calligrapher will write it by hand.</p>"
+          }
+        },
+        "item_68": {
+          "type": "item",
+          "settings": {
+            "title": "Easy exchanges",
+            "text": "<p>Gifts can be exchanged within 30 days — the receipt never shows the price.</p>"
+          }
+        },
+        "item_69": {
+          "type": "item",
+          "settings": {
+            "title": "Scheduled delivery",
+            "text": "<p>Choose the perfect day, and we will deliver it by insured courier.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_66",
+        "item_67",
+        "item_68",
+        "item_69"
+      ],
+      "settings": {
+        "eyebrow": "With Love",
+        "heading": "Gift Services",
+        "anchor": "services"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "finder",
+    "services"
+  ]
+}

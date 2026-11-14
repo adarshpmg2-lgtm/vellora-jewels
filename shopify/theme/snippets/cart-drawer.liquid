@@ -1,0 +1,16 @@
+<div class="drawer-backdrop" id="backdrop"></div>
+<aside class="drawer" id="drawer" aria-label="{{ 'cart.title' | t }}">
+  <div class="drawer-head">
+    <h3>{{ 'cart.title' | t }}</h3>
+    <button class="icon-btn" aria-label="{{ 'general.close' | t }}" id="bagClose">{% render 'icon', name: 'close' %}</button>
+  </div>
+  <div class="drawer-items" id="drawerItems">
+    {%- comment -%} Filled by vellora.js from /cart.js {%- endcomment -%}
+  </div>
+  <div class="drawer-foot">
+    <div class="total"><span>{{ 'cart.subtotal' | t }}</span><strong id="bagTotal">{{ cart.total_price | money }}</strong></div>
+    <p class="muted small">{{ 'cart.taxes_note' | t }}</p>
+    <form action="{{ routes.cart_url }}" method="post"><button type="submit" name="checkout" class="btn btn-dark full" id="checkoutBtn"{% if cart.item_count == 0 %} disabled{% endif %}>{{ 'cart.checkout' | t }}</button></form>
+    <a class="link-btn center-block" href="{{ routes.cart_url }}">{{ 'cart.view' | t }}</a>
+  </div>
+</aside>

@@ -1,0 +1,45 @@
+{%- liquid
+  assign tag = blank
+  if product.compare_at_price > product.price
+    assign tag = 'products.sale' | t
+  endif
+  for t in product.tags
+    if t == 'new'
+      assign tag = 'products.new' | t
+    endif
+  endfor
+  if product.available == false
+    assign tag = 'products.sold_out' | t
+  endif
+  assign needs_choice = false
+  if product.has_only_default_variant == false
+    assign needs_choice = true
+  endif
+-%}
+<article class="p-card">
+  <div class="p-img">
+    <a class="p-open" href="{{ product.url }}" aria-label="{{ product.title | escape }}">
+      {%- if product.featured_media -%}
+        {{ product.featured_media | image_url: width: 700 | image_tag: alt: product.featured_media.alt, loading: 'lazy', widths: '350, 500, 700', sizes: '(min-width: 1000px) 25vw, 50vw' }}
+      {%- endif -%}
+    </a>
+    {%- if tag != blank -%}<span class="p-tag">{{ tag }}</span>{%- endif -%}
+    <div class="p-actions">
+      {%- if needs_choice -%}
+        <a class="p-actions-link" href="{{ product.url }}">{{ 'products.select_size' | t }}</a>
+      {%- elsif product.available -%}
+        {%- form 'product', product, data-ajax-cart: '' -%}
+          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+          <button type="submit">{{ 'products.add_to_cart' | t }}</button>
+        {%- endform -%}
+      {%- endif -%}
+    </div>
+  </div>
+  <a class="p-name" href="{{ product.url }}">{{ product.title }}</a>
+  {%- assign subtitle = product.description | strip_html | truncatewords: 8 -%}
+  <p class="p-desc">{{ subtitle }}</p>
+  <p class="p-price">
+    {%- if product.compare_at_price > product.price -%}<s>{{ product.compare_at_price | money }}</s>{%- endif -%}
+    {%- if product.price_varies -%}{{ 'products.from' | t }} {%- endif -%}{{ product.price | money }}
+  </p>
+</article>

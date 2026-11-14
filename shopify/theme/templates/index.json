@@ -1,0 +1,222 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "style": "full",
+        "fallback_image": "hero.jpg",
+        "eyebrow": "New Collection",
+        "heading": "Aurea Eterna",
+        "text": "Roman gold, sculpted by hand into light.",
+        "button_label": "Discover the Collection",
+        "button_url": "/collections/jewellery/collection-aurea-eterna"
+      }
+    },
+    "categories": {
+      "type": "category-tiles",
+      "blocks": {
+        "tile_1": {
+          "type": "tile",
+          "settings": {
+            "title": "Rings",
+            "fallback_image": "ring-solitaire.jpg",
+            "url": "/collections/jewellery/rings"
+          }
+        },
+        "tile_2": {
+          "type": "tile",
+          "settings": {
+            "title": "Necklaces",
+            "fallback_image": "necklace-layer.jpg",
+            "url": "/collections/jewellery/necklaces"
+          }
+        },
+        "tile_3": {
+          "type": "tile",
+          "settings": {
+            "title": "Bracelets",
+            "fallback_image": "bracelet-diamond.jpg",
+            "url": "/collections/jewellery/bracelets"
+          }
+        },
+        "tile_4": {
+          "type": "tile",
+          "settings": {
+            "title": "Earrings",
+            "fallback_image": "earrings-gold.jpg",
+            "url": "/collections/jewellery/earrings"
+          }
+        }
+      },
+      "block_order": [
+        "tile_1",
+        "tile_2",
+        "tile_3",
+        "tile_4"
+      ],
+      "settings": {
+        "eyebrow": "Explore",
+        "heading": "The World of VELLORA",
+        "layout": "tiles",
+        "anchor": "collections"
+      }
+    },
+    "serena": {
+      "type": "image-with-text",
+      "settings": {
+        "fallback_image": "model.jpg",
+        "eyebrow": "Icons",
+        "heading": "Serena Collection",
+        "text": "<p>Inspired by the arches of ancient Rome, Serena balances bold architecture with feminine grace. Each piece is crafted in 18k gold and finished by hand in our Roman ateliers.</p>",
+        "button_label": "Shop Serena",
+        "button_url": "/collections/jewellery/collection-serena"
+      }
+    },
+    "featured": {
+      "type": "featured-collection",
+      "settings": {
+        "eyebrow": "Selection",
+        "heading": "New & Iconic",
+        "collection": "jewellery",
+        "limit": 8,
+        "button_label": "View all Jewellery",
+        "anchor": "shop"
+      }
+    },
+    "high": {
+      "type": "banner",
+      "settings": {
+        "fallback_image": "high-jewelry.jpg",
+        "eyebrow": "High Jewellery",
+        "heading": "Giardino Segreto",
+        "text": "Rare sapphires and emeralds bloom in our most extraordinary creations — one-of-a-kind masterpieces born in the heart of Rome.",
+        "button_label": "Discover High Jewellery",
+        "button_url": "/collections/high-jewellery"
+      }
+    },
+    "duo": {
+      "type": "card-grid",
+      "blocks": {
+        "card_5": {
+          "type": "card",
+          "settings": {
+            "title": "Bridal",
+            "text": "Engagement rings, wedding bands and the 4Cs guide.",
+            "fallback_image": "wedding-bands.jpg",
+            "url": "/collections/bridal"
+          }
+        },
+        "card_6": {
+          "type": "card",
+          "settings": {
+            "title": "Accessories",
+            "text": "Handbags, leather goods, eyewear and silk from Italy.",
+            "fallback_image": "bag-teal.jpg",
+            "url": "/collections/accessories"
+          }
+        }
+      },
+      "block_order": [
+        "card_5",
+        "card_6"
+      ],
+      "settings": {
+        "style": "duo",
+        "eyebrow": "Love & Promise",
+        "heading": "Bridal & Accessories"
+      }
+    },
+    "gifts": {
+      "type": "card-grid",
+      "blocks": {
+        "card_7": {
+          "type": "card",
+          "settings": {
+            "title": "Gifts for Her",
+            "fallback_image": "gift.jpg",
+            "url": "/collections/gifts/her"
+          }
+        },
+        "card_8": {
+          "type": "card",
+          "settings": {
+            "title": "Under ₹1,50,000",
+            "fallback_image": "pearls.jpg",
+            "url": "/collections/gifts/under-1-5l"
+          }
+        },
+        "card_9": {
+          "type": "card",
+          "settings": {
+            "title": "Gifts for Him",
+            "fallback_image": "briefcase.jpg",
+            "url": "/collections/gifts/him"
+          }
+        }
+      },
+      "block_order": [
+        "card_7",
+        "card_8",
+        "card_9"
+      ],
+      "settings": {
+        "style": "gift",
+        "eyebrow": "The Art of Gifting",
+        "heading": "Gifts to Treasure",
+        "cream": true
+      }
+    },
+    "maison": {
+      "type": "maison-teaser",
+      "blocks": {
+        "figure_10": {
+          "type": "figure",
+          "settings": {
+            "number": 100,
+            "suffix": "+",
+            "label": "Years of craft"
+          }
+        },
+        "figure_11": {
+          "type": "figure",
+          "settings": {
+            "number": 42,
+            "suffix": "",
+            "label": "Boutiques"
+          }
+        },
+        "figure_12": {
+          "type": "figure",
+          "settings": {
+            "number": 300,
+            "suffix": "+",
+            "label": "Artisans"
+          }
+        }
+      },
+      "block_order": [
+        "figure_10",
+        "figure_11",
+        "figure_12"
+      ],
+      "settings": {
+        "fallback_image": "colosseum.jpg",
+        "eyebrow": "The Maison",
+        "heading": "A Century of Roman Splendour",
+        "text": "Founded in 1924 on a quiet street near the Spanish Steps, VELLORA has carried the spirit of the Eternal City into every jewel — colour, volume and audacity, set in gold.",
+        "button_label": "Our History",
+        "button_url": "/pages/history"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "categories",
+    "serena",
+    "featured",
+    "high",
+    "duo",
+    "gifts",
+    "maison"
+  ]
+}

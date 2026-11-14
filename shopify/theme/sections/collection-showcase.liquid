@@ -1,0 +1,37 @@
+<section class="section" id="{{ section.settings.anchor | default: 'collections' }}">
+  <div class="section-head" data-reveal><p class="eyebrow dark">{{ section.settings.eyebrow }}</p><h2>{{ section.settings.heading }}</h2></div>
+  <div class="showcase">
+    {%- for block in section.blocks -%}
+      <div class="show-row{% cycle '', ' rev' %}" {{ block.shopify_attributes }}>
+        <div class="show-img">{% render 'image', image: block.settings.image, fallback: block.settings.fallback_image, alt: block.settings.title, widths: 1400 %}</div>
+        <div class="show-text" data-reveal>
+          <p class="eyebrow dark">{{ 'general.collection' | t }}</p>
+          <h3>{{ block.settings.title }}</h3>
+          <p>{{ block.settings.text }}</p>
+          <a class="btn btn-dark" href="{{ block.settings.url }}">{{ 'general.discover' | t }} {{ block.settings.title }}</a>
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collection showcase",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Masterpieces" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "High Jewellery Collections" },
+    { "type": "text", "id": "anchor", "label": "Anchor id", "default": "collections" }
+  ],
+  "blocks": [
+    { "type": "row", "name": "Collection", "settings": [
+      { "type": "image_picker", "id": "image", "label": "Image" },
+      { "type": "text", "id": "fallback_image", "label": "Default image file" },
+      { "type": "text", "id": "title", "label": "Title", "default": "Collection" },
+      { "type": "textarea", "id": "text", "label": "Text" },
+      { "type": "url", "id": "url", "label": "Link" }
+    ] }
+  ],
+  "presets": [{ "name": "Collection showcase", "blocks": [{ "type": "row" }] }]
+}
+{% endschema %}

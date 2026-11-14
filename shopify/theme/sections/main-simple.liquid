@@ -1,0 +1,53 @@
+{%- comment -%} One section for the small built-in pages: 404, all collections, blog, article and password. {%- endcomment -%}
+{%- case request.page_type -%}
+  {%- when '404' -%}
+    <section class="page-narrow center">
+      <p class="eyebrow dark">404</p><h1>{{ 'general.not_found' | t }}</h1>
+      <p class="muted">{{ 'general.not_found_text' | t }}</p>
+      <a class="btn btn-dark" href="{{ routes.collections_url }}/jewellery">{{ 'cart.discover' | t }}</a>
+    </section>
+  {%- when 'list-collections' -%}
+    <section class="section">
+      <div class="section-head"><h2>{{ 'collections.all_collections' | t }}</h2></div>
+      <div class="coll-grid">
+        {%- for c in collections -%}
+          <a class="coll-card" href="{{ c.url }}">
+            {%- if c.featured_image -%}{{ c.featured_image | image_url: width: 900 | image_tag: loading: 'lazy' }}{%- endif -%}
+            <div><h3>{{ c.title }}</h3><span>{{ 'general.explore' | t }}</span></div></a>
+        {%- endfor -%}
+      </div>
+    </section>
+  {%- when 'blog' -%}
+    <section class="section">
+      <div class="section-head"><h2>{{ blog.title }}</h2></div>
+      {%- paginate blog.articles by 9 -%}
+        <div class="duo hist-end-links">
+          {%- for article in blog.articles -%}
+            <a class="duo-card" href="{{ article.url }}">{%- if article.image -%}{{ article.image | image_url: width: 900 | image_tag: loading: 'lazy' }}{%- endif -%}
+              <div><h3>{{ article.title }}</h3><p>{{ article.excerpt_or_content | strip_html | truncatewords: 24 }}</p><span>{{ 'general.read' | t }}</span></div></a>
+          {%- endfor -%}
+        </div>
+        {%- if paginate.pages > 1 -%}<div class="center">{{ paginate | default_pagination }}</div>{%- endif -%}
+      {%- endpaginate -%}
+    </section>
+  {%- when 'article' -%}
+    <article class="page-narrow">
+      <p class="eyebrow dark">{{ article.published_at | date: format: 'date' }}</p>
+      <h1>{{ article.title }}</h1>
+      {%- if article.image -%}{{ article.image | image_url: width: 1400 | image_tag: style: 'margin-bottom:32px;height:auto' }}{%- endif -%}
+      <div class="rte">{{ article.content }}</div>
+    </article>
+  {%- else -%}
+    <section class="page-narrow center">
+      <span class="logo">{{ shop.name }}</span>
+      <p class="muted" style="margin:24px 0">{{ shop.password_message }}</p>
+      {%- form 'storefront_password' -%}
+        {%- if form.errors -%}<div class="errors">{{ form.errors | default_errors }}</div>{%- endif -%}
+        <div class="news-form"><input type="password" name="password" placeholder="{{ 'general.password' | t }}" aria-label="{{ 'general.password' | t }}" autocomplete="current-password"><button class="btn btn-dark" type="submit">{{ 'general.enter' | t }}</button></div>
+      {%- endform -%}
+    </section>
+{%- endcase -%}
+
+{% schema %}
+{ "name": "Page content (simple)" }
+{% endschema %}

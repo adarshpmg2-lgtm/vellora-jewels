@@ -1,0 +1,248 @@
+{
+  "sections": {
+    "main": {
+      "type": "history",
+      "blocks": {
+        "y1924": {
+          "type": "chapter",
+          "settings": {
+            "year": "1924",
+            "decade": "1920s",
+            "title": "A Workbench in Rome",
+            "text": "<p>Marco Vellora, the son of a silversmith from Umbria, rents a narrow room on Via della Croce, a few steps from Piazza di Spagna. With one apprentice and a borrowed bench, he makes chains, signet rings and silver for the families of the neighbourhood.</p><p>His chains — heavy, supple, hand-linked — quickly become known among Roman goldsmiths for a texture no machine could copy.</p>",
+            "fallback_image": "chains.jpg",
+            "image_alt": "Gold chains hanging in a workshop",
+            "vintage": true,
+            "full_width": false,
+            "caption": "Chains from the first workshop on Via della Croce",
+            "quote": "Gold must feel warm in the hand before it is beautiful to the eye.",
+            "quote_by": "Marco Vellora, 1926",
+            "product": "",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "y1938": {
+          "type": "chapter",
+          "settings": {
+            "year": "1938",
+            "decade": "1930s",
+            "title": "Via Condotti",
+            "text": "<p>The first true boutique opens on Via Condotti, the most elegant street in Rome. Its windows, lit late into the evening, become a stop for travellers on the Grand Tour of a new century.</p><p>Inside, Marco's wife Elena introduces something new: jewellery shown not in cases, but on velvet busts, as though already worn.</p>",
+            "fallback_image": "rome-view.jpg",
+            "image_alt": "Rome seen from above",
+            "vintage": true,
+            "full_width": true,
+            "caption": "",
+            "quote": "",
+            "quote_by": "",
+            "product": "",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "y1944": {
+          "type": "chapter",
+          "settings": {
+            "year": "1944",
+            "decade": "1940s",
+            "title": "The Hidden Years",
+            "text": "<p>During the war the workshop falls almost silent. The family hides its small reserve of stones inside the walls of the shop and keeps working in silver and brass, mending more than it makes.</p><p>When peace returns, the stones come out of the walls exactly as they went in — and the first jewels of the new era are made from them.</p>",
+            "fallback_image": "rings-tray.jpg",
+            "image_alt": "Rings resting in a jeweller's tray",
+            "vintage": true,
+            "full_width": false,
+            "caption": "",
+            "quote": "",
+            "quote_by": "",
+            "product": "",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "y1955": {
+          "type": "chapter",
+          "settings": {
+            "year": "1955",
+            "decade": "1950s",
+            "title": "Colour Arrives",
+            "text": "<p>Marco's son Luca, just twenty-four, breaks with the Parisian fashion for platinum and white diamonds. He sets rounded cabochons — turquoise, coral, amethyst, citrine — side by side in yellow gold.</p><p>Clients call them scandalous. Within five years, they are the most recognisable jewels in Rome.</p>",
+            "fallback_image": "rings-gem.jpg",
+            "image_alt": "Gold rings set with turquoise and carnelian",
+            "vintage": false,
+            "full_width": false,
+            "caption": "",
+            "quote": "Why should a jewel whisper, when Rome itself never does?",
+            "quote_by": "Luca Vellora",
+            "product": "polychroma-cocktail-set",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "y1962": {
+          "type": "chapter",
+          "settings": {
+            "year": "1962",
+            "decade": "1960s",
+            "title": "La Dolce Vita",
+            "text": "<p>Cinecittà is the Hollywood of the Tiber, and the actresses who film there find their way to Via Condotti between takes. Bold necklaces of gold and colour appear on screen, in magazines and on the Via Veneto at midnight.</p><p>VELLORA becomes, for a decade, the jeweller of an entire way of life.</p>",
+            "fallback_image": "model-hat.jpg",
+            "image_alt": "Woman in a wide-brimmed hat",
+            "vintage": false,
+            "full_width": true,
+            "caption": "",
+            "quote": "",
+            "quote_by": "",
+            "product": "",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "y1972": {
+          "type": "chapter",
+          "settings": {
+            "year": "1972",
+            "decade": "1970s",
+            "title": "Serena Is Born",
+            "text": "<p>Inspired by the arches of the Colosseum and the aqueducts of the Campagna, Luca's daughter Chiara draws a collection of soft architectural curves: Serena.</p><p>Light, wearable, made for every day rather than for galas, it brings VELLORA to a new generation of women who buy jewellery for themselves.</p>",
+            "fallback_image": "model.jpg",
+            "image_alt": "Woman wearing a fine gold pendant",
+            "vintage": false,
+            "full_width": false,
+            "caption": "",
+            "quote": "",
+            "quote_by": "",
+            "product": "serena-hoop-earrings",
+            "link_label": "Discover the Serena collection",
+            "link_url": "/collections/jewellery/collection-serena#shop"
+          }
+        },
+        "y1985": {
+          "type": "chapter",
+          "settings": {
+            "year": "1985",
+            "decade": "1980s",
+            "title": "Coins & Chains",
+            "text": "<p>Chiara returns to the beginning: her grandfather's hand-linked chains, now set with ancient-inspired coin medallions. The Moneta and Catene lines are born, bold and unmistakably Roman.</p><p>The Maison opens its first boutiques outside Italy — in Paris, London and New York.</p>",
+            "fallback_image": "necklace-coins.jpg",
+            "image_alt": "Layered gold necklaces with coin pendants",
+            "vintage": false,
+            "full_width": false,
+            "caption": "",
+            "quote": "",
+            "quote_by": "",
+            "product": "moneta-coin-necklace",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "y1998": {
+          "type": "chapter",
+          "settings": {
+            "year": "1998",
+            "decade": "1990s",
+            "title": "The Florentine Workshop",
+            "text": "<p>VELLORA acquires a small leather workshop in Florence, run by three generations of saddle-makers. Its first bags carry clasps made by the jewellers in Rome.</p><p>Leather becomes a second language for the Maison — and the Piazza top-handle bag its most requested piece.</p>",
+            "fallback_image": "bag-woven.jpg",
+            "image_alt": "Woven leather top-handle bag",
+            "vintage": false,
+            "full_width": false,
+            "caption": "",
+            "quote": "",
+            "quote_by": "",
+            "product": "cesto-woven-bag",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "y2006": {
+          "type": "chapter",
+          "settings": {
+            "year": "2006",
+            "decade": "2000s",
+            "title": "Giardino Segreto",
+            "text": "<p>The first great high jewellery collection in fifty years: emeralds, sapphires and diamonds arranged as a secret garden, each piece one of a kind.</p><p>It takes the atelier four years and more than 30,000 hours of work.</p>",
+            "fallback_image": "high-jewelry.jpg",
+            "image_alt": "Sapphire and diamond earrings on a leaf",
+            "vintage": false,
+            "full_width": false,
+            "caption": "",
+            "quote": "We did not want to design jewels. We wanted to grow them.",
+            "quote_by": "Chiara Vellora",
+            "product": "giardino-sapphire-earrings",
+            "link_label": "",
+            "link_url": ""
+          }
+        },
+        "y2012": {
+          "type": "chapter",
+          "settings": {
+            "year": "2012",
+            "decade": "2010s",
+            "title": "VELLORA in India",
+            "text": "<p>A boutique opens in Mumbai's Kala Ghoda, followed by New Delhi, Bengaluru and Hyderabad. Indian goldsmithing — its bangles, its love of colour — feels like family.</p><p>In 2018 the Maison commits to 100% recycled or certified gold and opens an artisan school in Jaipur with the VELLORA Foundation.</p>",
+            "fallback_image": "bangles.jpg",
+            "image_alt": "Stack of gold bangles",
+            "vintage": false,
+            "full_width": false,
+            "caption": "",
+            "quote": "",
+            "quote_by": "",
+            "product": "roma-bangle-stack",
+            "link_label": "Find a boutique",
+            "link_url": "/pages/maison#boutiques"
+          }
+        },
+        "y2024": {
+          "type": "chapter",
+          "settings": {
+            "year": "2024",
+            "decade": "2020s",
+            "title": "A Century of Splendour",
+            "text": "<p>One hundred years after the first workbench, the Maison celebrates with Aurea Eterna — sculpted Roman gold, rubies and granulation techniques revived from antiquity.</p><p>Three generations later, every piece is still finished by hand in Rome.</p>",
+            "fallback_image": "hero.jpg",
+            "image_alt": "Gold necklace with ruby earrings",
+            "vintage": false,
+            "full_width": true,
+            "caption": "",
+            "quote": "",
+            "quote_by": "",
+            "product": "",
+            "link_label": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "y1924",
+        "y1938",
+        "y1944",
+        "y1955",
+        "y1962",
+        "y1972",
+        "y1985",
+        "y1998",
+        "y2006",
+        "y2012",
+        "y2024"
+      ],
+      "settings": {
+        "eyebrow": "1924 — Today",
+        "heading": "Our History",
+        "subheading": "A century of Roman audacity, told in gold",
+        "lead": "From a single workbench near the Spanish Steps to boutiques from Rome to Mumbai, VELLORA has always worked the same way: by hand, in gold, with colour, volume and a little Roman audacity.",
+        "fig1": "1924",
+        "fig1_label": "Founded in Rome",
+        "fig2": "3",
+        "fig2_label": "Generations of the family",
+        "fig3": "300+",
+        "fig3_label": "Artisans today",
+        "fig4": "42",
+        "fig4_label": "Boutiques worldwide"
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

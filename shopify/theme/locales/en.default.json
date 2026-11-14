@@ -1,0 +1,94 @@
+{
+  "general": {
+    "breadcrumb": "Breadcrumb", "cancel": "Cancel", "close": "Close", "collection": "Collection", "discover": "Discover",
+    "enter": "Enter", "explore": "Explore", "home": "Home", "not_found": "Page not found",
+    "not_found_text": "The page you were looking for does not exist or has moved.", "on_this_page": "On this page",
+    "page": "Page {{ page }}", "password": "Password", "read": "Read", "scroll": "Scroll down", "skip": "Skip to content",
+    "view_all": "View all"
+  },
+  "header": {
+    "account": "Account", "boutiques": "Boutiques", "cart": "Shopping bag", "close_menu": "Close menu", "contact": "Contact Us",
+    "main_nav": "Main", "open_menu": "Open menu", "search": "Search"
+  },
+  "footer": {
+    "appointment": "Book an Appointment", "appointment_text": "In boutique or by private video call.", "ateliers": "Ateliers",
+    "care": "Care & Repair", "client_services": "Client Services", "email": "Your email address",
+    "engraving": "Engraving", "engraving_text": "Personalise rings and bracelets for free.", "follow": "Follow Us",
+    "history": "Our History", "packaging": "Signature Packaging", "packaging_text": "Every creation arrives in our iconic box.",
+    "region": "Country / Region", "returns": "Shipping & Returns", "shipping": "Complimentary Shipping",
+    "shipping_text": "Insured express delivery on every order.", "shop": "Shop", "size_guide": "Ring Size Guide",
+    "subscribe": "Subscribe", "subscribed": "Grazie! You are now subscribed.", "sustainability": "Sustainability"
+  },
+  "cart": {
+    "added": "added to your bag", "checkout": "Proceed to Checkout", "discover": "Discover Jewellery",
+    "empty": "Your bag is empty.", "error": "Sorry, this item could not be added.", "note": "Gift message or note",
+    "product": "Product", "quantity": "Quantity", "remove": "Remove", "subtotal": "Subtotal",
+    "taxes_note": "Taxes included. Shipping calculated at checkout.", "title": "Your Bag", "total": "Total",
+    "update": "Update bag", "view": "View bag"
+  },
+  "collections": {
+    "all": "All", "all_collections": "All Collections", "apply": "Apply", "clear": "Clear all",
+    "count": { "one": "{{ count }} creation", "other": "{{ count }} creations" },
+    "empty": "No creations match these filters.", "filter": "Filter", "filter_sort": "Filter & Sort", "filters": "Filters",
+    "max": "Maximum price", "min": "Minimum price", "shop": "Shop", "show": "Show results", "sort_by": "Sort by"
+  },
+  "products": {
+    "add_to_cart": "Add to Bag", "choose_size": "Please select a size.", "engraving": "Engraving",
+    "engraving_offer": "Add complimentary engraving", "engraving_placeholder": "Up to 15 characters", "from": "From",
+    "new": "New", "placeholder": "Product name", "private_viewing": "Request a private viewing", "sale": "Sale",
+    "select": "Select", "select_size": "Select Size", "size_guide": "Size guide", "sold_out": "Sold out",
+    "tax_note": "Price includes GST."
+  },
+  "appointment": {
+    "boutique": "Boutique", "date": "Preferred date", "email": "Email", "interest": "Interest", "message": "Message (optional)",
+    "name": "Full name", "phone": "Mobile number", "submit": "Request Appointment",
+    "success": "Grazie. Your appointment request has been sent — a client advisor will call you to confirm.",
+    "time": "Time", "video": "Private video call"
+  },
+  "bridal": {
+    "col_circ": "Circumference (mm)", "col_diam": "Diameter (mm)", "col_indian": "Indian size", "col_size": "VELLORA size",
+    "measure_finger": "Measure your finger",
+    "measure_finger_text": "Wrap a strip of paper around the base of your finger, mark where it meets, and measure the length — that is your circumference.",
+    "measure_ring": "Measure a ring you own",
+    "measure_ring_text": "Measure the inside diameter of a ring that fits, edge to edge, in millimetres and find it in the table.",
+    "shapes": "Diamond Shapes", "shapes_eyebrow": "Find Your Shape", "size_eyebrow": "Find the Perfect Fit",
+    "size_guide": "Ring Size Guide", "size_note": "Still unsure? Order your best guess — the first resize is complimentary."
+  },
+  "gifts": {
+    "any_budget": "Any budget", "any_occasion": "Any occasion", "anyone": "Anyone", "budget": "Budget", "couple": "A couple",
+    "for": "For", "her": "Her", "him": "Him", "occasion": "Occasion", "show": "Show Gifts"
+  },
+  "maison": {
+    "book_here": "Book an appointment here", "directions": "Get directions", "read_history": "Read Our Full History", "story": "Our Story"
+  },
+  "history": {
+    "born_here": "Born in this era", "continues": "The story continues", "decades": "Decades",
+    "discover_creation": "Discover the creation",
+    "end_text": "Every jewel that leaves our atelier adds a line to this story. Discover what the next century begins with.",
+    "written": "Written by hand, every day"
+  },
+  "search": {
+    "no_results": "No results. Try a different word, such as ring, gold or diamond.", "placeholder": "What are you looking for?",
+    "results_for": "Results for “{{ terms }}”", "submit": "Search", "title": "Search"
+  },
+  "customer": {
+    "account": "My Account", "activate": "Activate account", "add_address": "Add a new address", "address1": "Address",
+    "address2": "Apartment, landmark", "addresses": "Addresses", "back_sign_in": "Back to sign in", "city": "City",
+    "country": "Country", "create": "Create an Account", "decline": "Decline invitation", "default": "Default",
+    "details": "My Details", "email": "Email", "first_name": "First name", "forgot": "Forgot your password?",
+    "guest": "Continue as guest", "hello": "Hello, {{ name }}", "last_name": "Last name",
+    "marketing": "Keep me informed about new collections and events", "new": "New to VELLORA?",
+    "no_orders": "You have no orders yet.", "order": "Order", "orders": "Order history", "password": "Password",
+    "password_confirm": "Confirm password", "perk_checkout": "Faster checkout with saved addresses",
+    "perk_events": "Invitations to private events", "perk_orders": "Track orders and returns", "phone": "Phone",
+    "province": "State", "reset_sent": "We've sent you an email with a link to reset your password.",
+    "reset_text": "We will send you an email to reset your password.", "reset_title": "Reset your password",
+    "save": "Save", "set_default": "Set as default address", "shipping": "Shipping address", "sign_in": "Sign In",
+    "sign_in_text": "Access your orders, addresses and personal details.", "sign_out": "Sign out", "submit": "Submit",
+    "zip": "PIN code"
+  },
+  "gift_card": {
+    "apple_wallet": "Add to Apple Wallet", "expired": "This gift card has expired or is disabled.",
+    "remaining": "{{ balance }} remaining", "shop": "Start shopping", "title": "Your gift card"
+  }
+}

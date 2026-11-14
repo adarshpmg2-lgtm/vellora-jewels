@@ -1,0 +1,22 @@
+{%- layout none -%}
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ 'gift_card.title' | t }} — {{ shop.name }}</title>
+  {{ 'vellora.css' | asset_url | stylesheet_tag }}
+  {{ content_for_header }}
+</head>
+<body>
+  <main class="page-narrow center">
+    <span class="logo">{{ shop.name }}</span>
+    <h1 style="margin-top:32px">{{ gift_card.initial_value | money }}</h1>
+    {%- if gift_card.enabled == false or gift_card.expired -%}<p class="muted">{{ 'gift_card.expired' | t }}</p>{%- endif -%}
+    {%- if gift_card.balance != gift_card.initial_value -%}<p class="muted">{{ 'gift_card.remaining' | t: balance: gift_card.balance | money }}</p>{%- endif -%}
+    <p class="tab-text" style="margin:24px 0">{{ gift_card.code | format_code }}</p>
+    {%- if gift_card.pass_url -%}<p><a href="{{ gift_card.pass_url }}">{{ 'gift_card.apple_wallet' | t }}</a></p>{%- endif -%}
+    <a class="btn btn-dark" href="{{ shop.url }}">{{ 'gift_card.shop' | t }}</a>
+  </main>
+</body>
+</html>

@@ -1,0 +1,92 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "blocks": {
+        "sub_54": {
+          "type": "sub",
+          "settings": {
+            "label": "Bags",
+            "tag": "bags",
+            "fallback_image": "bag.jpg"
+          }
+        },
+        "sub_55": {
+          "type": "sub",
+          "settings": {
+            "label": "Small Leather Goods",
+            "tag": "slg",
+            "fallback_image": "wallet.jpg"
+          }
+        },
+        "sub_56": {
+          "type": "sub",
+          "settings": {
+            "label": "Eyewear",
+            "tag": "eyewear",
+            "fallback_image": "sunglasses-cat.jpg"
+          }
+        },
+        "sub_57": {
+          "type": "sub",
+          "settings": {
+            "label": "Silk",
+            "tag": "silk",
+            "fallback_image": "silk-scarf.jpg"
+          }
+        },
+        "sub_58": {
+          "type": "sub",
+          "settings": {
+            "label": "Men's",
+            "tag": "mens",
+            "fallback_image": "briefcase.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "sub_54",
+        "sub_55",
+        "sub_56",
+        "sub_57",
+        "sub_58"
+      ],
+      "settings": {
+        "fallback_image": "bag-teal.jpg",
+        "eyebrow": "Leather & Silk",
+        "heading": "All Accessories",
+        "show_tiles": true,
+        "per_page": 24,
+        "dark": false
+      }
+    },
+    "workshop": {
+      "type": "image-with-text",
+      "settings": {
+        "fallback_image": "bag-woven.jpg",
+        "eyebrow": "Made in Italy",
+        "heading": "The Florentine Workshop",
+        "text": "<p>Each bag is cut from full-grain calf leather and assembled by a single artisan over twelve to twenty hours, with hardware finished in palladium or gold by our jewellers.</p>",
+        "button_label": "Shop Bags",
+        "button_url": "/collections/accessories/bags"
+      }
+    },
+    "mens": {
+      "type": "image-with-text",
+      "settings": {
+        "fallback_image": "men-suit.jpg",
+        "reverse": true,
+        "eyebrow": "For Him",
+        "heading": "The Gentleman's Edit",
+        "text": "<p>Briefcases, wallets, sunglasses and bold gold chains — understated pieces built to be used every day for years.</p>",
+        "button_label": "Shop Men's",
+        "button_url": "/collections/accessories/mens"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "workshop",
+    "mens"
+  ]
+}

@@ -1,0 +1,31 @@
+<section class="section dark-band" id="{{ section.settings.anchor | default: 'gemstones' }}">
+  <div class="section-head" data-reveal><p class="eyebrow">{{ section.settings.eyebrow }}</p><h2>{{ section.settings.heading }}</h2></div>
+  <div class="gem-grid">
+    {%- for block in section.blocks -%}
+      <a class="gem" href="{{ block.settings.url }}" {{ block.shopify_attributes }}>
+        <span class="gem-dot" style="--c: {{ block.settings.color }}"></span>
+        <h4>{{ block.settings.title }}</h4><p>{{ block.settings.text }}</p>
+      </a>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Gemstones",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "The Gemstone Journey" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Rare Stones, Chosen One by One" },
+    { "type": "text", "id": "anchor", "label": "Anchor id", "default": "gemstones" }
+  ],
+  "blocks": [
+    { "type": "gem", "name": "Gemstone", "settings": [
+      { "type": "text", "id": "title", "label": "Name", "default": "Diamond" },
+      { "type": "color", "id": "color", "label": "Colour", "default": "#e9eef2" },
+      { "type": "textarea", "id": "text", "label": "Text" },
+      { "type": "url", "id": "url", "label": "Link" }
+    ] }
+  ],
+  "presets": [{ "name": "Gemstones", "blocks": [{ "type": "gem" }] }]
+}
+{% endschema %}

@@ -1,0 +1,209 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "blocks": {
+        "sub_13": {
+          "type": "sub",
+          "settings": {
+            "label": "Rings",
+            "tag": "rings",
+            "fallback_image": "ring-solitaire.jpg"
+          }
+        },
+        "sub_14": {
+          "type": "sub",
+          "settings": {
+            "label": "Necklaces & Pendants",
+            "tag": "necklaces",
+            "fallback_image": "necklace-layer.jpg"
+          }
+        },
+        "sub_15": {
+          "type": "sub",
+          "settings": {
+            "label": "Bracelets",
+            "tag": "bracelets",
+            "fallback_image": "bracelet-diamond.jpg"
+          }
+        },
+        "sub_16": {
+          "type": "sub",
+          "settings": {
+            "label": "Earrings",
+            "tag": "earrings",
+            "fallback_image": "earrings-studs.jpg"
+          }
+        },
+        "sub_17": {
+          "type": "sub",
+          "settings": {
+            "label": "Men's Jewellery",
+            "tag": "mens",
+            "fallback_image": "chain-black.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "sub_13",
+        "sub_14",
+        "sub_15",
+        "sub_16",
+        "sub_17"
+      ],
+      "settings": {
+        "fallback_image": "necklace-model.jpg",
+        "eyebrow": "Fine Jewellery",
+        "heading": "All Jewellery",
+        "show_tiles": true,
+        "per_page": 24,
+        "dark": false
+      }
+    },
+    "collections": {
+      "type": "card-grid",
+      "blocks": {
+        "card_18": {
+          "type": "card",
+          "settings": {
+            "title": "Aurea Eterna",
+            "text": "Roman gold, sculpted by hand into light.",
+            "fallback_image": "hero.jpg",
+            "url": "/collections/jewellery/collection-aurea-eterna"
+          }
+        },
+        "card_19": {
+          "type": "card",
+          "settings": {
+            "title": "Serena",
+            "text": "Arches of ancient Rome, softened into feminine curves.",
+            "fallback_image": "model.jpg",
+            "url": "/collections/jewellery/collection-serena"
+          }
+        },
+        "card_20": {
+          "type": "card",
+          "settings": {
+            "title": "Luna",
+            "text": "Crescent moons and coins for layered, everyday magic.",
+            "fallback_image": "necklace-layer.jpg",
+            "url": "/collections/jewellery/collection-luna"
+          }
+        },
+        "card_21": {
+          "type": "card",
+          "settings": {
+            "title": "Stella",
+            "text": "Rivers of diamonds that catch every star.",
+            "fallback_image": "bracelet-diamond.jpg",
+            "url": "/collections/jewellery/collection-stella"
+          }
+        },
+        "card_22": {
+          "type": "card",
+          "settings": {
+            "title": "Onda",
+            "text": "Waves of rose gold from the fountains of Rome.",
+            "fallback_image": "bracelet-rose.jpg",
+            "url": "/collections/jewellery/collection-onda"
+          }
+        },
+        "card_23": {
+          "type": "card",
+          "settings": {
+            "title": "Catene",
+            "text": "Bold chains and links — the Maison's modern talisman.",
+            "fallback_image": "chains.jpg",
+            "url": "/collections/jewellery/collection-catene"
+          }
+        },
+        "card_24": {
+          "type": "card",
+          "settings": {
+            "title": "Polychroma",
+            "text": "Joyful colour in turquoise, carnelian and topaz.",
+            "fallback_image": "rings-gem.jpg",
+            "url": "/collections/jewellery/collection-polychroma"
+          }
+        }
+      },
+      "block_order": [
+        "card_18",
+        "card_19",
+        "card_20",
+        "card_21",
+        "card_22",
+        "card_23",
+        "card_24"
+      ],
+      "settings": {
+        "style": "overlay",
+        "eyebrow": "Signature Lines",
+        "heading": "The Collections",
+        "cream": true,
+        "anchor": "collections"
+      }
+    },
+    "layering": {
+      "type": "image-with-text",
+      "settings": {
+        "fallback_image": "hands-model.jpg",
+        "eyebrow": "Style Notes",
+        "heading": "The Art of Layering",
+        "text": "<p>Mix chains of different lengths, stack fine rings with one bold piece and pair yellow with rose gold — Roman women have done it for two thousand years.</p>",
+        "button_label": "Shop Catene",
+        "button_url": "/collections/jewellery/collection-catene"
+      }
+    },
+    "care": {
+      "type": "info-grid",
+      "blocks": {
+        "item_25": {
+          "type": "item",
+          "settings": {
+            "title": "Everyday care",
+            "text": "<p>Put jewellery on last and take it off first. Avoid perfume, lotion and chlorine, and store each piece in its own pouch.</p>"
+          }
+        },
+        "item_26": {
+          "type": "item",
+          "settings": {
+            "title": "Cleaning",
+            "text": "<p>Wipe gold and platinum with a soft lint-free cloth. Diamonds can be bathed in warm soapy water and dried with a soft brush.</p>"
+          }
+        },
+        "item_27": {
+          "type": "item",
+          "settings": {
+            "title": "Complimentary service",
+            "text": "<p>Bring your VELLORA creations to any boutique for a free yearly clean, polish and stone check by our jewellers.</p>"
+          }
+        },
+        "item_28": {
+          "type": "item",
+          "settings": {
+            "title": "Repairs & resizing",
+            "text": "<p>Rings can be resized once free of charge within the first year. Repairs are quoted within 48 hours.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_25",
+        "item_26",
+        "item_27",
+        "item_28"
+      ],
+      "settings": {
+        "eyebrow": "Client Services",
+        "heading": "Jewellery Care",
+        "anchor": "care"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "collections",
+    "layering",
+    "care"
+  ]
+}

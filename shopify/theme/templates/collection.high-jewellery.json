@@ -1,0 +1,188 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-collection",
+      "blocks": {
+        "sub_29": {
+          "type": "sub",
+          "settings": {
+            "label": "Necklaces",
+            "tag": "necklaces",
+            "fallback_image": "necklace-diamond.jpg"
+          }
+        },
+        "sub_30": {
+          "type": "sub",
+          "settings": {
+            "label": "Earrings",
+            "tag": "earrings",
+            "fallback_image": "high-jewelry.jpg"
+          }
+        },
+        "sub_31": {
+          "type": "sub",
+          "settings": {
+            "label": "Rings",
+            "tag": "rings",
+            "fallback_image": "ring-flower.jpg"
+          }
+        },
+        "sub_32": {
+          "type": "sub",
+          "settings": {
+            "label": "Bracelets",
+            "tag": "bracelets",
+            "fallback_image": "bracelet-diamond.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "sub_29",
+        "sub_30",
+        "sub_31",
+        "sub_32"
+      ],
+      "settings": {
+        "fallback_image": "high-jewelry.jpg",
+        "eyebrow": "Haute Joaillerie",
+        "heading": "All High Jewellery",
+        "show_tiles": true,
+        "per_page": 24,
+        "dark": true,
+        "button_label": "Request a Private Viewing",
+        "button_url": "#appointment"
+      }
+    },
+    "showcase": {
+      "type": "collection-showcase",
+      "blocks": {
+        "row_33": {
+          "type": "row",
+          "settings": {
+            "title": "Giardino Segreto",
+            "text": "Emeralds and sapphires from a secret Roman garden.",
+            "fallback_image": "high-jewelry.jpg",
+            "url": "/collections/high-jewellery/collection-giardino-segreto"
+          }
+        },
+        "row_34": {
+          "type": "row",
+          "settings": {
+            "title": "Magnifica",
+            "text": "Our most extraordinary one-of-a-kind creations.",
+            "fallback_image": "necklace-diamond.jpg",
+            "url": "/collections/high-jewellery/collection-magnifica"
+          }
+        },
+        "row_35": {
+          "type": "row",
+          "settings": {
+            "title": "Fiore di Roma",
+            "text": "Gem-set blooms from the gardens of the Villa Borghese.",
+            "fallback_image": "ring-flower.jpg",
+            "url": "/collections/high-jewellery/collection-fiore-di-roma"
+          }
+        }
+      },
+      "block_order": [
+        "row_33",
+        "row_34",
+        "row_35"
+      ],
+      "settings": {
+        "eyebrow": "Masterpieces",
+        "heading": "High Jewellery Collections",
+        "anchor": "collections"
+      }
+    },
+    "gemstones": {
+      "type": "gemstones",
+      "blocks": {
+        "gem_36": {
+          "type": "gem",
+          "settings": {
+            "title": "Diamond",
+            "color": "#e9eef2",
+            "text": "Exceptional white diamonds, D–F colour, internally flawless.",
+            "url": "/collections/high-jewellery/stone-diamond"
+          }
+        },
+        "gem_37": {
+          "type": "gem",
+          "settings": {
+            "title": "Emerald",
+            "color": "#1f7a55",
+            "text": "Colombian emeralds with a velvety, saturated green.",
+            "url": "/collections/high-jewellery/stone-emerald"
+          }
+        },
+        "gem_38": {
+          "type": "gem",
+          "settings": {
+            "title": "Sapphire",
+            "color": "#1f3f8a",
+            "text": "Cornflower Ceylon and royal blue Kashmir-type sapphires.",
+            "url": "/collections/high-jewellery/stone-sapphire"
+          }
+        },
+        "gem_39": {
+          "type": "gem",
+          "settings": {
+            "title": "Ruby",
+            "color": "#9b1b30",
+            "text": "Untreated Burmese rubies of pigeon-blood red.",
+            "url": "/collections/high-jewellery/stone-ruby"
+          }
+        },
+        "gem_40": {
+          "type": "gem",
+          "settings": {
+            "title": "Amethyst",
+            "color": "#7a4fa0",
+            "text": "Deep Siberian amethysts, often paired with citrine.",
+            "url": "/collections/high-jewellery/stone-amethyst"
+          }
+        }
+      },
+      "block_order": [
+        "gem_36",
+        "gem_37",
+        "gem_38",
+        "gem_39",
+        "gem_40"
+      ],
+      "settings": {
+        "anchor": "gemstones"
+      }
+    },
+    "bespoke": {
+      "type": "image-with-text",
+      "settings": {
+        "fallback_image": "necklace-diamond.jpg",
+        "reverse": true,
+        "eyebrow": "Bespoke",
+        "heading": "A Jewel Made Only for You",
+        "text": "<p>From the first sketch to the final polish, our designers and master jewellers create a unique piece around your story — usually over six to nine months, with a gemstone selection presented privately.</p>",
+        "steps": "Consultation with a designer in Rome or India\nGemstone selection from our private reserve\nGouache drawings and wax model\nCrafting by hand in our atelier",
+        "anchor": "bespoke"
+      }
+    },
+    "appointment": {
+      "type": "appointment",
+      "settings": {
+        "eyebrow": "By Appointment",
+        "heading": "Request a Private Viewing",
+        "text": "High jewellery is presented privately in our salons or at a place of your choosing. A client advisor will contact you within 24 hours.",
+        "topic": "High Jewellery",
+        "anchor": "appointment"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "showcase",
+    "gemstones",
+    "bespoke",
+    "appointment"
+  ]
+}

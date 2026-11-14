@@ -1,0 +1,12 @@
+{%- comment -%}
+  Renders a merchant-picked image, or a bundled theme asset as the default.
+  Params: image, fallback (asset filename), alt, class, widths (max width), loading, vintage
+{%- endcomment -%}
+{%- assign w = widths | default: 1600 -%}
+{%- assign cls = class -%}
+{%- if vintage -%}{%- assign cls = cls | append: ' vintage' -%}{%- endif -%}
+{%- if image != blank -%}
+  {{ image | image_url: width: w | image_tag: alt: alt, class: cls, loading: loading, sizes: '100vw', widths: '400, 800, 1200, 1600, 2000' }}
+{%- elsif fallback != blank -%}
+  <img src="{{ fallback | asset_url }}" alt="{{ alt | escape }}" class="{{ cls }}" loading="{{ loading | default: 'lazy' }}" width="1600" height="1100">
+{%- endif -%}

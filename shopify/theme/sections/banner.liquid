@@ -1,0 +1,26 @@
+<section class="highj" id="{{ section.settings.anchor | default: section.id }}">
+  {% render 'image', image: section.settings.image, fallback: section.settings.fallback_image, alt: section.settings.heading, widths: 2000 %}
+  <div class="highj-content">
+    <p class="eyebrow">{{ section.settings.eyebrow }}</p>
+    <h2>{{ section.settings.heading }}</h2>
+    <p>{{ section.settings.text }}</p>
+    {%- if section.settings.button_label != blank -%}<a href="{{ section.settings.button_url }}" class="btn btn-light">{{ section.settings.button_label }}</a>{%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Image banner",
+  "settings": [
+    { "type": "image_picker", "id": "image", "label": "Image" },
+    { "type": "text", "id": "fallback_image", "label": "Default image file", "default": "high-jewelry.jpg" },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "High Jewellery" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Giardino Segreto" },
+    { "type": "textarea", "id": "text", "label": "Text" },
+    { "type": "text", "id": "button_label", "label": "Button label" },
+    { "type": "url", "id": "button_url", "label": "Button link" },
+    { "type": "text", "id": "anchor", "label": "Anchor id" }
+  ],
+  "presets": [{ "name": "Image banner" }]
+}
+{% endschema %}

@@ -1,0 +1,17 @@
+{
+  "type": "footer",
+  "name": "Footer group",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "settings": {
+        "show_services": true,
+        "newsletter_heading": "Stay in Touch",
+        "newsletter_text": "Be the first to discover new collections, exclusive events and stories from the Maison.",
+        "phone": "1800 000 1924",
+        "copyright": "VELLORA Roma"
+      }
+    }
+  },
+  "order": ["footer"]
+}

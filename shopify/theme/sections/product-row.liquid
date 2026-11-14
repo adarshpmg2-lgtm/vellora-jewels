@@ -1,0 +1,20 @@
+<section class="section{% if section.settings.cream %} cream{% endif %}" id="{{ section.settings.anchor | default: section.id }}">
+  <div class="section-head" data-reveal><p class="eyebrow dark">{{ section.settings.eyebrow }}</p><h2>{{ section.settings.heading }}</h2></div>
+  <div class="product-grid four">
+    {%- for product in section.settings.products -%}{% render 'product-card', product: product %}{%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hand-picked products",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Timeless" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Icons of the Maison" },
+    { "type": "product_list", "id": "products", "label": "Products", "limit": 8 },
+    { "type": "checkbox", "id": "cream", "label": "Cream background", "default": true },
+    { "type": "text", "id": "anchor", "label": "Anchor id", "default": "icons" }
+  ],
+  "presets": [{ "name": "Hand-picked products" }]
+}
+{% endschema %}

@@ -1,0 +1,96 @@
+{%- liquid
+  assign main_menu = linklists[section.settings.menu]
+  assign has_mega = false
+  for link in main_menu.links
+    if link.links.size > 0
+      assign has_mega = true
+    endif
+  endfor
+-%}
+<div class="promo"><div class="promo-track">
+  {%- for i in (1..3) -%}
+    {%- assign key = 'promo_' | append: i -%}
+    {%- if section.settings[key] != blank -%}<span>{{ section.settings[key] }}</span>{%- endif -%}
+  {%- endfor -%}
+</div></div>
+
+<header class="header" id="header">
+  <div class="header-top">
+    <div class="header-left">
+      <button class="icon-btn menu-toggle" aria-label="{{ 'header.open_menu' | t }}" id="menuToggle">{% render 'icon', name: 'menu' %}</button>
+      <a class="icon-btn" href="{{ routes.search_url }}" aria-label="{{ 'header.search' | t }}" id="searchOpen">{% render 'icon', name: 'search' %}</a>
+      <a href="{{ section.settings.boutiques_url | default: '/pages/maison#boutiques' }}" class="header-link hide-sm">{{ 'header.boutiques' | t }}</a>
+    </div>
+    <a href="{{ routes.root_url }}" class="logo" aria-label="{{ shop.name }}">
+      {%- if section.settings.logo != blank -%}
+        {{ section.settings.logo | image_url: width: 400 | image_tag: alt: shop.name, class: 'logo-img', widths: '200, 400' }}
+      {%- else -%}
+        {{ section.settings.logo_text | default: 'VELLORA' }}<small>{{ section.settings.logo_tagline }}</small>
+      {%- endif -%}
+    </a>
+    <div class="header-right">
+      <a href="{{ section.settings.contact_url | default: '#contact' }}" class="header-link hide-sm">{{ 'header.contact' | t }}</a>
+      {%- if shop.customer_accounts_enabled -%}
+        <a class="icon-btn account-btn{% if customer %} signed-in{% endif %}" href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}" aria-label="{{ 'header.account' | t }}">
+          {% render 'icon', name: 'account' %}
+          {%- if customer -%}<span class="account-initial">{{ customer.first_name | slice: 0 | upcase }}</span>{%- endif -%}
+        </a>
+      {%- endif -%}
+      <a class="icon-btn badge-wrap" href="{{ routes.cart_url }}" aria-label="{{ 'header.cart' | t }}" id="bagOpen">
+        {% render 'icon', name: 'bag' %}
+        <span class="badge{% if cart.item_count > 0 %} show{% endif %}" id="bagCount">{{ cart.item_count }}</span>
+      </a>
+    </div>
+  </div>
+  <nav class="nav" id="nav" aria-label="{{ 'header.main_nav' | t }}">
+    <button class="icon-btn nav-close" aria-label="{{ 'header.close_menu' | t }}" id="menuClose">{% render 'icon', name: 'close' %}</button>
+    <ul class="nav-list">
+      {%- if has_mega -%}
+        {%- for link in main_menu.links -%}
+          <li class="nav-item">
+            <a class="nav-top{% if link.child_active or link.active %} current{% endif %}" href="{{ link.url }}" aria-expanded="false" aria-controls="mega{{ forloop.index }}">{{ link.title }}{% if link.links.size > 0 %}{% render 'icon', name: 'chevron' %}{% endif %}</a>
+            {%- if link.links.size > 0 -%}
+              <div class="mega" id="mega{{ forloop.index }}">
+                <div class="mega-inner">
+                  <div class="mega-cols">
+                    {%- for col in link.links -%}
+                      <div class="mega-col">
+                        <h6>{% if col.links.size > 0 %}{{ col.title }}{% else %}<a href="{{ col.url }}">{{ col.title }}</a>{% endif %}</h6>
+                        {%- for sub in col.links -%}<a href="{{ sub.url }}">{{ sub.title }}</a>{%- endfor -%}
+                      </div>
+                    {%- endfor -%}
+                  </div>
+                  {%- if link.type == 'collection_link' and link.object.featured_image -%}
+                    <a class="mega-feature" href="{{ link.url }}">{{ link.object.featured_image | image_url: width: 560 | image_tag: loading: 'lazy' }}<span>{{ link.object.title }}</span><em>{{ 'general.discover' | t }}</em></a>
+                  {%- endif -%}
+                </div>
+                <a class="mega-all" href="{{ link.url }}">{{ 'general.view_all' | t }} {{ link.title }}</a>
+              </div>
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+      {%- else -%}
+        {% render 'mega-default' %}
+      {%- endif -%}
+    </ul>
+  </nav>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "class": "header-section",
+  "settings": [
+    { "type": "image_picker", "id": "logo", "label": "Logo image", "info": "Leave empty to use the text logo." },
+    { "type": "text", "id": "logo_text", "label": "Logo text", "default": "VELLORA" },
+    { "type": "text", "id": "logo_tagline", "label": "Logo tagline", "default": "ROMA · 1924" },
+    { "type": "link_list", "id": "menu", "label": "Menu", "default": "main-menu", "info": "Nest links three levels deep (Section → Column → Link) for mega menus. Without nested links the built-in VELLORA mega menu is shown." },
+    { "type": "url", "id": "boutiques_url", "label": "Boutiques link" },
+    { "type": "url", "id": "contact_url", "label": "Contact link" },
+    { "type": "header", "content": "Announcement bar" },
+    { "type": "text", "id": "promo_1", "label": "Message 1" },
+    { "type": "text", "id": "promo_2", "label": "Message 2" },
+    { "type": "text", "id": "promo_3", "label": "Message 3" }
+  ]
+}
+{% endschema %}
